@@ -2,242 +2,324 @@
 <html lang="es">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content=""/>
-  <title>AmoMisClientes</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Sistema de fidelización SaaS para negocios. Tu app con tu marca en el celular de tus clientes."/>
+  <title>AmoMisClientes — Fidelización digital para tu negocio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/chat.css"/>
 </head>
 <body>
 
+<!-- NAV -->
 <header class="nav" id="nav">
   <div class="nav__inner">
-    <a class="nav__logo" href="/"><span class="nav__logo-icon">A</span><span>AmoMisClientes</span></a>
-    <nav class="nav__links" aria-label="Principal">
-      <a href="#features" data-i18n="nav.features">Cómo funciona</a>
-      <a href="#pricing" data-i18n="nav.pricing">Planes</a>
+    <a class="nav__logo" href="/">
+      <span class="nav__logo-mark">A</span>
+      AmoMisClientes
+    </a>
+    <nav class="nav__links">
+      <a href="#como-funciona" data-i18n="nav.features">Cómo funciona</a>
+      <a href="#precios" data-i18n="nav.pricing">Planes</a>
       <a href="#faq" data-i18n="nav.faq">Preguntas</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
-    <a class="btn btn--primary btn--sm nav__cta" href="#demo" data-i18n="nav.demo">Ver demo</a>
-    <button class="nav__burger" id="nav-burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav__actions">
+      <a class="btn-secondary" href="#contacto" data-i18n="nav.demo">Ver demo</a>
+      <a class="btn-primary" href="#precios" data-i18n="hero.ctaPrimary">Empezar</a>
+    </div>
+    <button class="nav__burger" id="nav-burger" aria-expanded="false" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="nav__mobile" id="nav-mobile" hidden>
-    <a href="#features" data-i18n="nav.features">Cómo funciona</a>
-    <a href="#pricing" data-i18n="nav.pricing">Planes</a>
+    <a href="#como-funciona" data-i18n="nav.features">Cómo funciona</a>
+    <a href="#precios" data-i18n="nav.pricing">Planes</a>
     <a href="#faq" data-i18n="nav.faq">Preguntas</a>
     <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-    <a class="btn btn--primary" href="#demo" data-i18n="nav.demo">Ver demo</a>
+    <a class="btn-primary btn-primary nav__mobile btn-primary" href="#precios">Empezar gratis</a>
   </div>
 </header>
 
-<!-- HERO — 🦁 CAMBIAR bg: foto de negocio real o captura del sistema -->
-<section class="hero">
-  <div class="hero__bg-img"></div>
-  <div class="hero__bg-overlay"></div>
-  <div class="wrap hero__inner">
-    <div class="hero__text">
-      <div class="hero__eyebrow">🏆 Sistema de fidelización SaaS para negocios</div>
-      <h1 class="hero__headline">Tu negocio en el celular<br><span>de tus clientes</span></h1>
-      <p class="hero__sub" data-i18n="hero.sub">Con tu ícono. Con tus colores. Con tu marca. Sin App Store, sin Play Store.</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" href="#demo" data-i18n="hero.ctaPrimary">Ver demo gratis</a>
-        <a class="btn btn--ghost btn--lg" href="#contacto" data-i18n="hero.ctaSecondary">Hablar con ventas</a>
+<!-- HERO -->
+<section class="hero" style="padding-top:calc(64px + 72px)">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <div class="hero__badge">🏆 Sistema de fidelización SaaS para negocios</div>
+        <h1 class="hero__h">
+          Tu negocio en el<br>
+          celular de tus<br>
+          <span>clientes</span>
+        </h1>
+        <p class="hero__sub" data-i18n="hero.sub">Con tu ícono. Con tus colores. Con tu marca. Sin App Store, sin Play Store. Sellos, puntos y premios que hacen volver.</p>
+        <div class="hero__ctas">
+          <a class="btn-primary lg" href="#precios" data-i18n="hero.ctaPrimary">Ver demo gratis</a>
+          <a class="btn-secondary lg" href="#contacto" data-i18n="hero.ctaSecondary">Hablar con ventas</a>
+        </div>
+        <p class="hero__note" data-i18n="hero.badge">Sin permanencia · Cancelás cuando querés</p>
       </div>
-      <p class="hero__badge" data-i18n="hero.badge">Sin permanencia · Cancelás cuando querés</p>
-    </div>
-    <div class="hero__visual">
-      <div class="phone-frame">
-        <!-- 🐕 CAMBIAR: screenshot real de la PWA del negocio demo -->
-        <div class="phone-screen">
-          <img class="phone-screen__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=520&q=80" alt="Demo app" loading="eager"/>
-          <div class="phone-app-body">
-            <div class="phone-app-header">
-              <div class="phone-app-logo">🏪</div>
-              <div><div class="phone-app-title">Tu Negocio</div><div class="phone-app-sub">Fidelización</div></div>
-            </div>
-            <div class="phone-stamps-card">
-              <div class="phone-stamps-label">Sellos acumulados</div>
-              <div class="phone-stamps-grid">
-                <span class="stamp stamp--on">☕</span><span class="stamp stamp--on">☕</span>
-                <span class="stamp stamp--on">☕</span><span class="stamp stamp--on">☕</span>
-                <span class="stamp stamp--on">☕</span><span class="stamp">☕</span>
-                <span class="stamp">☕</span><span class="stamp stamp--prize">🎁</span>
+      <div class="hero__visual">
+        <div class="phone">
+          <!-- 🐕 CAMBIAR: screenshot real PWA del negocio demo -->
+          <div class="phone__screen">
+            <img class="phone__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=512&q=80" alt="Demo app"/>
+            <div class="phone__body">
+              <div class="phone__header">
+                <div class="phone__app-icon">🏪</div>
+                <div>
+                  <div class="phone__app-name">Tu Negocio</div>
+                  <div class="phone__app-sub">Programa de fidelización</div>
+                </div>
               </div>
-              <div class="phone-stamps-progress">5 de 8 · ¡Falta poco!</div>
+              <div class="phone__card">
+                <div class="phone__card-lbl">Sellos acumulados</div>
+                <div class="phone__stamps">
+                  <span class="s on">☕</span><span class="s on">☕</span><span class="s on">☕</span><span class="s on">☕</span>
+                  <span class="s on">☕</span><span class="s">☕</span><span class="s">☕</span><span class="s prize">🎁</span>
+                </div>
+                <div class="phone__progress">5 de 8 · ¡Falta poco para tu café gratis!</div>
+              </div>
+              <div class="phone__notif"><span>🔔</span><span>¡2×1 en cafés hoy hasta las 18hs!</span></div>
             </div>
-            <div class="phone-notif"><span>🔔</span><span>¡2x1 en cafés hoy!</span></div>
           </div>
+          <div class="phone__homerow">
+            <div class="app-icon app-icon--brand">🏪</div>
+            <div class="app-icon app-icon--gray">📷</div>
+            <div class="app-icon app-icon--gray">🎵</div>
+            <div class="app-icon app-icon--gray">📱</div>
+          </div>
+          <div class="phone__label">Tu ícono · Tu marca · Su celular</div>
         </div>
-        <div class="phone-homescreen">
-          <div class="home-icon home-icon--primary">🏪</div>
-          <div class="home-icon home-icon--gray">📷</div>
-          <div class="home-icon home-icon--gray">🎵</div>
-          <div class="home-icon home-icon--gray">📱</div>
-        </div>
-        <div class="phone-frame__label">Tu ícono · Tu marca</div>
       </div>
     </div>
   </div>
-  <div class="hero__wave"><svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 60 C360 0 1080 0 1440 60 L1440 60 L0 60Z" fill="#FAFAF8"/></svg></div>
 </section>
 
 <!-- STATS -->
-<section class="proof-strip">
-  <div class="wrap proof-strip__inner">
-    <div class="proof-stat"><div class="proof-stat__num" data-i18n="social_proof.stat1_num">40%</div><div class="proof-stat__label" data-i18n="social_proof.stat1_label">más visitas con programa de fidelización</div></div>
-    <div class="proof-divider"></div>
-    <div class="proof-stat"><div class="proof-stat__num" data-i18n="social_proof.stat2_num">5x</div><div class="proof-stat__label" data-i18n="social_proof.stat2_label">más barato retener que conseguir cliente nuevo</div></div>
-    <div class="proof-divider"></div>
-    <div class="proof-stat"><div class="proof-stat__num" data-i18n="social_proof.stat3_num">84%</div><div class="proof-stat__label" data-i18n="social_proof.stat3_label">de clientes elige marcas que los premian</div></div>
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar__inner">
+      <div class="stat">
+        <div class="stat__n" data-i18n="social_proof.stat1_num">40%</div>
+        <div class="stat__l" data-i18n="social_proof.stat1_label">más visitas con programa de fidelización activo</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-i18n="social_proof.stat2_num">5x</div>
+        <div class="stat__l" data-i18n="social_proof.stat2_label">más barato retener que conseguir un cliente nuevo</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n" data-i18n="social_proof.stat3_num">84%</div>
+        <div class="stat__l" data-i18n="social_proof.stat3_label">de los consumidores elige marcas que los premian</div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- 🏪 LOGOS — CAMBIAR pills por logos reales cuando tengás clientes -->
-<div class="logos-strip">
-  <p class="logos-strip__label">Primeros negocios que se suman</p>
+<!-- LOGOS — 🏪 CAMBIAR por logos reales cuando tengas clientes -->
+<div class="logos">
+  <div class="logos__lbl">Primeros negocios que se suman a AmoMisClientes</div>
   <div style="overflow:hidden">
-    <div class="logos-track">
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Cafetería Central</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Bar El Rincón</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Ferretería Sur</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Peluquería Style</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Gym Power</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Veterinaria Pets</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Minimercado Norte</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Lavado Express</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Cafetería Central</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Bar El Rincón</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Ferretería Sur</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Peluquería Style</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Gym Power</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Veterinaria Pets</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Minimercado Norte</div>
-      <div class="logo-pill"><span class="logo-pill__dot"></span>Lavado Express</div>
+    <div class="logos__track">
+      <div class="logos__pill"><span class="logos__dot"></span>Cafetería Central</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Bar El Rincón</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Ferretería Del Sur</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Peluquería Style</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Gym Power</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Veterinaria Mascotas</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Minimercado Norte</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Lavado Express</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Cafetería Central</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Bar El Rincón</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Ferretería Del Sur</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Peluquería Style</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Gym Power</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Veterinaria Mascotas</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Minimercado Norte</div>
+      <div class="logos__pill"><span class="logos__dot"></span>Lavado Express</div>
     </div>
   </div>
 </div>
 
 <!-- DIFERENCIADOR -->
 <section class="diff" id="diferenciador">
-  <div class="wrap">
-    <div class="section-label">El diferencial</div>
-    <h2 class="section-title" data-i18n="differentiator.title">No es una app genérica. Es TU app.</h2>
-    <p class="section-sub" data-i18n="differentiator.sub">La mayoría de los sistemas meten tu negocio en una app compartida donde convivís con la competencia.</p>
-    <div class="diff__compare">
-      <div class="diff__col">
-        <div class="diff__col-label">❌ Otros sistemas</div>
-        <div class="diff__screen">
-          <!-- 🐱 CAMBIAR: captura de app competidora o imagen de contraste -->
-          <img class="diff__screen-img" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&q=70" alt="App genérica"/>
-          <div class="diff__screen-body">
-            <div class="diff__app-row"><div class="diff__app-icon diff__app-icon--generic">🛒</div><div class="diff__app-name">App Genérica</div></div>
-            <div class="diff__app-list">
-              <div class="diff__app-item">Tu negocio</div>
-              <div class="diff__app-item diff__app-item--competitor">Competidor A</div>
-              <div class="diff__app-item diff__app-item--competitor">Competidor B</div>
-              <div class="diff__app-item diff__app-item--competitor">Competidor C</div>
-            </div>
+  <div class="container">
+    <div class="eyebrow">El diferencial</div>
+    <h2 class="section-h" data-i18n="differentiator.title">No es una app genérica.<br>Es <span style="color:var(--orange)">TU app.</span></h2>
+    <p class="section-sub" data-i18n="differentiator.sub">La mayoría de los sistemas meten tu negocio en una app compartida donde convivís con la competencia. AmoMisClientes hace algo diferente.</p>
+    <div class="diff__cards">
+      <div class="diff__card diff__card--them">
+        <div class="diff__card-lbl">❌ Otros sistemas</div>
+        <!-- 🐱 CAMBIAR: imagen más representativa -->
+        <img class="diff__card-img" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&q=70" alt="App genérica"/>
+        <div class="diff__card-body">
+          <div class="diff__app-row">
+            <div class="diff__app-ico">🛒</div>
+            <div class="diff__app-name">App Genérica Compartida</div>
           </div>
+          <div class="diff__list">
+            <div class="diff__list-item">Tu negocio</div>
+            <div class="diff__list-item diff__list-item--faded">Competidor A</div>
+            <div class="diff__list-item diff__list-item--faded">Competidor B</div>
+            <div class="diff__list-item diff__list-item--faded">Competidor C</div>
+          </div>
+          <p style="font-size:13px;color:var(--gray-400);margin-top:12px" data-i18n="differentiator.vs_them">Tu negocio comparte pantalla con la competencia</p>
         </div>
-        <p class="diff__col-text" data-i18n="differentiator.vs_them">Tu negocio comparte app con la competencia</p>
       </div>
-      <div class="diff__vs">VS</div>
-      <div class="diff__col diff__col--us">
-        <div class="diff__col-label">✅ AmoMisClientes</div>
-        <div class="diff__screen diff__screen--us">
-          <!-- 🐕 CAMBIAR: screenshot real de PWA con marca del cliente -->
-          <img class="diff__screen-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Tu app exclusiva"/>
-          <div class="diff__screen-body">
-            <div class="diff__app-row"><div class="diff__app-icon diff__app-icon--branded">🏪</div><div class="diff__app-name diff__app-name--branded">Tu Negocio</div></div>
-            <div class="diff__brand-badge">Tu logo · Tus colores · Tu ícono</div>
-            <div class="diff__homescreen"><div class="diff__icon-big">🏪</div><div class="diff__icon-lbl">Tu App en su celular</div></div>
+
+      <div class="diff__card diff__card--us">
+        <div class="diff__card-lbl">✅ AmoMisClientes</div>
+        <!-- 🐕 CAMBIAR: screenshot real de la PWA con marca del cliente -->
+        <img class="diff__card-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Tu app"/>
+        <div class="diff__card-body">
+          <div class="diff__app-row">
+            <div class="diff__app-ico diff__app-ico--brand">🏪</div>
+            <div class="diff__app-name diff__app-name--brand">Tu Negocio — Tu Marca</div>
           </div>
+          <div class="diff__badge">Tu logo · Tus colores · Tu ícono</div>
+          <div class="diff__phone-preview">
+            <div class="diff__phone-ico">🏪</div>
+            <div class="diff__phone-lbl">Tu app en la pantalla de inicio del cliente</div>
+          </div>
+          <p style="font-size:13px;color:var(--orange);font-weight:600;margin-top:12px" data-i18n="differentiator.vs_us">App exclusiva con tu marca en su celular</p>
         </div>
-        <p class="diff__col-text diff__col-text--us" data-i18n="differentiator.vs_us">App exclusiva con tu marca en su celular</p>
       </div>
     </div>
     <div class="diff__points">
-      <div class="diff__point"><div class="diff__point-icon">📱</div><div><h3 data-i18n="differentiator.point1_title">Tu ícono en su pantalla de inicio</h3><p data-i18n="differentiator.point1_text">Tus clientes instalan tu app directamente desde el navegador, sin pasar por tiendas.</p></div></div>
-      <div class="diff__point"><div class="diff__point-icon">🎨</div><div><h3 data-i18n="differentiator.point2_title">Tus colores y tu marca en cada pantalla</h3><p data-i18n="differentiator.point2_text">Configurás la identidad visual: logo, colores, imagen de fondo. Tus clientes viven tu marca.</p></div></div>
-      <div class="diff__point"><div class="diff__point-icon">⚡</div><div><h3 data-i18n="differentiator.point3_title">Sin App Store. Sin Play Store.</h3><p data-i18n="differentiator.point3_text">La tecnología PWA permite instalar en 2 clics desde el navegador. Cero fricción, cero abandono.</p></div></div>
+      <div class="diff__point">
+        <div class="diff__point-ico">📱</div>
+        <h3 data-i18n="differentiator.point1_title">Tu ícono en su pantalla de inicio</h3>
+        <p data-i18n="differentiator.point1_text">Tus clientes instalan tu app desde el navegador, sin pasar por tiendas. Tu logo, no el de otra empresa.</p>
+      </div>
+      <div class="diff__point">
+        <div class="diff__point-ico">🎨</div>
+        <h3 data-i18n="differentiator.point2_title">Tus colores y marca en cada pantalla</h3>
+        <p data-i18n="differentiator.point2_text">Configurás logo, colores e imagen de fondo. Tus clientes viven tu marca, no una app blanca genérica.</p>
+      </div>
+      <div class="diff__point">
+        <div class="diff__point-ico">⚡</div>
+        <h3 data-i18n="differentiator.point3_title">Sin App Store. Sin Play Store.</h3>
+        <p data-i18n="differentiator.point3_text">Tecnología PWA: instalación en 2 clics desde el navegador. Cero fricción, cero abandono.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CÓMO FUNCIONA -->
-<section class="how" id="features">
-  <div class="how__bg"></div>
-  <div class="wrap">
-    <div class="section-label">Simple y rápido</div>
-    <h2 class="section-title" data-i18n="how.title">Cómo funciona en 3 pasos</h2>
-    <div class="how__steps">
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="eyebrow">Simple y rápido</div>
+    <h2 class="section-h" style="color:#fff" data-i18n="how.title">Cómo funciona en 3 pasos</h2>
+    <div class="how__grid">
       <div class="how__step">
         <!-- 🦊 CAMBIAR → screenshot real panel de configuración -->
-        <img class="how__step-img" src="https://images.unsplash.com/photo-1611510338559-2f463335092c?w=600&q=80" alt="Paso 1" loading="lazy"/>
-        <div class="how__step-body"><div class="how__step-num">1</div><h3 data-i18n="how.step1_title">Configurás tu negocio</h3><p data-i18n="how.step1_text">Cargás tu logo, colores y reglas de sellos o puntos. En menos de una hora tu app está lista.</p></div>
+        <img class="how__step-img" src="https://images.unsplash.com/photo-1611510338559-2f463335092c?w=600&q=80" alt="Paso 1"/>
+        <div class="how__step-body">
+          <div class="how__step-num">1</div>
+          <h3 data-i18n="how.step1_title">Configurás tu negocio</h3>
+          <p data-i18n="how.step1_text">Cargás tu logo, colores y reglas de sellos o puntos. En menos de una hora tu app está lista.</p>
+        </div>
       </div>
       <div class="how__step">
         <!-- 🐼 CAMBIAR → foto empleado mostrando QR en caja -->
-        <img class="how__step-img" src="https://images.unsplash.com/photo-1530286310811-9571e6b9d74e?w=600&q=80" alt="Paso 2" loading="lazy"/>
-        <div class="how__step-body"><div class="how__step-num">2</div><h3 data-i18n="how.step2_title">Tu cliente escanea el QR</h3><p data-i18n="how.step2_text">Mostrás el QR en caja desde tu celular. El cliente lo escanea e instala tu app en el momento.</p></div>
+        <img class="how__step-img" src="https://images.unsplash.com/photo-1530286310811-9571e6b9d74e?w=600&q=80" alt="Paso 2"/>
+        <div class="how__step-body">
+          <div class="how__step-num">2</div>
+          <h3 data-i18n="how.step2_title">Tu cliente escanea el QR</h3>
+          <p data-i18n="how.step2_text">Mostrás el QR en caja desde tu celular. El cliente lo escanea e instala tu app en el momento.</p>
+        </div>
       </div>
       <div class="how__step">
-        <!-- 🦁 CAMBIAR → cliente feliz mirando celular con sellos -->
-        <img class="how__step-img" src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80" alt="Paso 3" loading="lazy"/>
-        <div class="how__step-body"><div class="how__step-num">3</div><h3 data-i18n="how.step3_title">Acumula, canjea y vuelve</h3><p data-i18n="how.step3_text">El sistema trabaja solo. Tus clientes acumulan, reciben notificaciones y vuelven por sus premios.</p></div>
+        <!-- 🦁 CAMBIAR → cliente mirando celular con sellos completos -->
+        <img class="how__step-img" src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80" alt="Paso 3"/>
+        <div class="how__step-body">
+          <div class="how__step-num">3</div>
+          <h3 data-i18n="how.step3_title">Acumula, canjea y vuelve</h3>
+          <p data-i18n="how.step3_text">El sistema trabaja solo. Tus clientes acumulan, reciben notificaciones y vuelven por sus premios.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FUNCIONALIDADES -->
-<section class="feats">
-  <div class="wrap">
-    <div class="section-label">Funcionalidades</div>
-    <h2 class="section-title" data-i18n="features.title">Todo lo que necesitás para fidelizar</h2>
+<section class="features" id="funcionalidades">
+  <div class="container">
+    <div class="eyebrow">Funcionalidades</div>
+    <h2 class="section-h" data-i18n="features.title">Todo lo que necesitás para fidelizar</h2>
     <p class="section-sub" data-i18n="features.sub">Herramientas pensadas para comercios reales, sin complicaciones técnicas.</p>
-    <div class="feats__grid">
-      <div class="feat-card"><!-- 🐱 CAMBIAR → screenshot cartón de sellos --><img class="feat-card__img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">🎫</div><h3 data-i18n="features.f1Title">Sellos digitales</h3><p data-i18n="features.f1Text">El clásico cartón en versión digital. Configurás vos las reglas.</p></div></div>
-      <div class="feat-card"><!-- 🐶 CAMBIAR → screenshot pantalla puntos --><img class="feat-card__img" src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">⭐</div><h3 data-i18n="features.f2Title">Puntos y premios</h3><p data-i18n="features.f2Text">Por cada compra suman puntos canjeables por premios.</p></div></div>
-      <div class="feat-card"><!-- 🦜 CAMBIAR → screenshot notificación push --><img class="feat-card__img" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">🔔</div><h3 data-i18n="features.f3Title">Notificaciones push</h3><p data-i18n="features.f3Text">Mandás promociones directo al celular de tus clientes.</p></div></div>
-      <div class="feat-card"><!-- 🦎 CAMBIAR → screenshot QR generado --><img class="feat-card__img" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">📲</div><h3 data-i18n="features.f4Title">QR desde tu celular</h3><p data-i18n="features.f4Text">Generás el QR desde tu smartphone. Sin hardware extra.</p></div></div>
-      <div class="feat-card"><!-- 🐕 CAMBIAR → screenshot mapa sucursales --><img class="feat-card__img" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">📍</div><h3 data-i18n="features.f5Title">Mapa de sucursales</h3><p data-i18n="features.f5Text">El cliente ve cuál sucursal le queda más cerca.</p></div></div>
-      <div class="feat-card"><!-- 🐧 CAMBIAR → screenshot dashboard estadísticas --><img class="feat-card__img" src="https://images.unsplash.com/photo-1530286310811-9571e6b9d74e?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">📊</div><h3 data-i18n="features.f6Title">Panel desde el celular</h3><p data-i18n="features.f6Text">Administrás todo desde tu teléfono. Desde cualquier lugar.</p></div></div>
-      <div class="feat-card"><!-- 🦋 CAMBIAR → imagen multiidioma/internacional --><img class="feat-card__img" src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">🌍</div><h3 data-i18n="features.f7Title">Multiidioma</h3><p data-i18n="features.f7Text">Español, inglés y portugués. Ideal para zonas turísticas.</p></div></div>
-      <div class="feat-card"><!-- 🦅 CAMBIAR → imagen API/integración técnica --><img class="feat-card__img" src="https://images.unsplash.com/photo-1611510338559-2f463335092c?w=400&q=70" alt="" loading="lazy"/><div class="feat-card__body"><div class="feat-card__icon">🔌</div><h3 data-i18n="features.f8Title">API para tu sistema</h3><p data-i18n="features.f8Text">Conectás con tu POS o ERP. Puntos automáticos.</p></div></div>
+    <div class="features__grid">
+      <div class="feat">
+        <!-- 🐱 CAMBIAR → screenshot cartón de sellos -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">🎫</div><div class="feat__title" data-i18n="features.f1Title">Sellos digitales</div><div class="feat__text" data-i18n="features.f1Text">El clásico cartón en versión digital. Configurás vos las reglas.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🐶 CAMBIAR → screenshot pantalla puntos y premios -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">⭐</div><div class="feat__title" data-i18n="features.f2Title">Puntos y premios</div><div class="feat__text" data-i18n="features.f2Text">Por cada compra suman puntos canjeables por premios que vos definís.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🦜 CAMBIAR → screenshot notificación push en celular -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">🔔</div><div class="feat__title" data-i18n="features.f3Title">Notificaciones push</div><div class="feat__text" data-i18n="features.f3Text">Mandás promociones directo al celular. Sin email, sin WhatsApp masivo.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🦎 CAMBIAR → screenshot QR generado desde el panel -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">📲</div><div class="feat__title" data-i18n="features.f4Title">QR desde tu celular</div><div class="feat__text" data-i18n="features.f4Text">Generás el QR desde tu smartphone. Sin hardware extra, sin tablet en caja.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🐕 CAMBIAR → screenshot mapa de sucursales en la PWA -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">📍</div><div class="feat__title" data-i18n="features.f5Title">Mapa de sucursales</div><div class="feat__text" data-i18n="features.f5Text">El cliente ve cuál sucursal le queda más cerca y puede contactar por WhatsApp.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🐧 CAMBIAR → screenshot dashboard con estadísticas -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1530286310811-9571e6b9d74e?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">📊</div><div class="feat__title" data-i18n="features.f6Title">Panel desde el celular</div><div class="feat__text" data-i18n="features.f6Text">Administrás todo desde tu teléfono. Estadísticas, QR, notificaciones.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🦋 CAMBIAR → imagen multiidioma/internacional -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">🌍</div><div class="feat__title" data-i18n="features.f7Title">Multiidioma</div><div class="feat__text" data-i18n="features.f7Text">Español, inglés y portugués. Ideal para zonas turísticas e internacionales.</div></div>
+      </div>
+      <div class="feat">
+        <!-- 🦅 CAMBIAR → imagen que represente API/integración -->
+        <img class="feat__img" src="https://images.unsplash.com/photo-1611510338559-2f463335092c?w=400&q=70" alt=""/>
+        <div class="feat__body"><div class="feat__ico">🔌</div><div class="feat__title" data-i18n="features.f8Title">API para tu sistema</div><div class="feat__text" data-i18n="features.f8Text">Conectás con tu POS o ERP. Los puntos se suman automáticamente.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CASOS DE USO -->
-<section class="usecases">
-  <div class="wrap">
-    <div class="section-label">Para tu negocio</div>
-    <h2 class="section-title" data-i18n="usecases.title">Funciona para tu tipo de negocio</h2>
+<section class="usecases" id="rubros">
+  <div class="container">
+    <div class="eyebrow">Para tu negocio</div>
+    <h2 class="section-h" data-i18n="usecases.title">Funciona para tu tipo de negocio</h2>
     <div class="usecases__grid">
-      <div class="usecase-card">
-        <!-- ☕ CAMBIAR → foto real cafetería -->
-        <img class="usecase-card__img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&q=80" alt="Cafeterías" loading="lazy"/>
-        <div class="usecase-card__overlay"><div class="usecase-card__emoji">☕</div><h3 data-i18n="usecases.cafe_title">Cafeterías</h3><p data-i18n="usecases.cafe_text">Cartón digital de sellos. El 8vo café es gratis.</p></div>
+      <div class="usecase">
+        <!-- ☕ CAMBIAR → foto real de cafetería -->
+        <img class="usecase__img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&q=80" alt="Cafeterías"/>
+        <div class="usecase__overlay"><div class="usecase__ico">☕</div><h3 data-i18n="usecases.cafe_title">Cafeterías</h3><p data-i18n="usecases.cafe_text">Cartón digital de sellos. El 8vo café es gratis. Tus clientes vuelven a completarlo.</p></div>
       </div>
-      <div class="usecase-card">
-        <!-- 🍺 CAMBIAR → foto real bar/gastronomía -->
-        <img class="usecase-card__img" src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&q=80" alt="Bares" loading="lazy"/>
-        <div class="usecase-card__overlay"><div class="usecase-card__emoji">🍺</div><h3 data-i18n="usecases.bar_title">Bares y gastronomía</h3><p data-i18n="usecases.bar_text">Sellos y puntos. Doble herramienta para fidelizar.</p></div>
+      <div class="usecase">
+        <!-- 🍺 CAMBIAR → foto real de bar -->
+        <img class="usecase__img" src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&q=80" alt="Bares"/>
+        <div class="usecase__overlay"><div class="usecase__ico">🍺</div><h3 data-i18n="usecases.bar_title">Bares y gastronomía</h3><p data-i18n="usecases.bar_text">Sellos y puntos combinados. Doble herramienta para fidelizar.</p></div>
       </div>
-      <div class="usecase-card">
-        <!-- 🔧 CAMBIAR → foto real ferretería/retail -->
-        <img class="usecase-card__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&q=80" alt="Retail" loading="lazy"/>
-        <div class="usecase-card__overlay"><div class="usecase-card__emoji">🔧</div><h3 data-i18n="usecases.retail_title">Ferreterías y retail</h3><p data-i18n="usecases.retail_text">Puntos canjeables por descuentos o productos.</p></div>
+      <div class="usecase">
+        <!-- 🔧 CAMBIAR → foto real de ferretería o retail -->
+        <img class="usecase__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&q=80" alt="Retail"/>
+        <div class="usecase__overlay"><div class="usecase__ico">🔧</div><h3 data-i18n="usecases.retail_title">Ferreterías y retail</h3><p data-i18n="usecases.retail_text">Puntos por compra canjeables por descuentos o productos.</p></div>
       </div>
-      <div class="usecase-card">
-        <!-- ✨ CAMBIAR → collage de múltiples negocios -->
-        <img class="usecase-card__img" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&q=80" alt="Más negocios" loading="lazy"/>
-        <div class="usecase-card__overlay"><div class="usecase-card__emoji">✨</div><h3 data-i18n="usecases.other_title">Y muchos más</h3><p data-i18n="usecases.other_text">Peluquerías · Gimnasios · Veterinarias · Lavaderos · Estaciones de servicio</p></div>
+      <div class="usecase">
+        <!-- ✨ CAMBIAR → foto de negocio comercial variado -->
+        <img class="usecase__img" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&q=80" alt="Más negocios"/>
+        <div class="usecase__overlay"><div class="usecase__ico">✨</div><h3 data-i18n="usecases.other_title">Y muchos más</h3><p data-i18n="usecases.other_text">Peluquerías · Gimnasios · Veterinarias · Lavaderos · Estaciones de servicio · Supermercados</p></div>
       </div>
     </div>
   </div>
@@ -245,87 +327,100 @@
 
 <!-- TESTIMONIOS -->
 <section class="testimonials" id="testimonios">
-  <div class="wrap">
-    <div class="section-label">Clientes reales</div>
-    <h2 class="section-title" data-i18n="testimonials.title">Lo que dicen los negocios que ya fidelizan</h2>
-    <div class="testimonials__grid">
-      <div class="testi-card">
-        <div class="testi-card__quote">"</div>
-        <p class="testi-card__text" data-i18n="testimonials.t1_text">Desde que implementamos AmoMisClientes, nuestros clientes vuelven más seguido. El sistema QR es muy fácil de usar.</p>
-        <!-- 🐕 CAMBIAR avatar → foto real del dueño -->
-        <div class="testi-card__author">
-          <img class="testi-card__avatar" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=100&q=80" alt="Cliente" loading="lazy"/>
-          <div><div class="testi-card__name" data-i18n="testimonials.t1_name">— Próximo testimonio real</div><div class="testi-card__role" data-i18n="testimonials.t1_role">Dueño de negocio</div></div>
+  <div class="container">
+    <div class="eyebrow" style="display:block;text-align:center">Clientes reales</div>
+    <h2 class="section-h section-h--center" data-i18n="testimonials.title">Lo que dicen los negocios</h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__text" data-i18n="testimonials.t1_text">"Desde que implementamos AmoMisClientes, nuestros clientes vuelven más seguido. El sistema QR es muy fácil de usar para el personal."</p>
+        <!-- 🐕 CAMBIAR avatar y nombre → foto real del dueño del negocio -->
+        <div class="testi__author">
+          <img class="testi__avatar" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=100&q=80" alt="Cliente"/>
+          <div><div class="testi__name">— Próximo testimonio real</div><div class="testi__role">Dueño de negocio</div></div>
         </div>
       </div>
-      <div class="testi-card"><div class="testi-card__placeholder"><div class="testi-placeholder-icon">🏪</div><p>Aquí va el testimonio de tu segundo cliente real</p></div></div>
-      <div class="testi-card"><div class="testi-card__placeholder"><div class="testi-placeholder-icon">🏪</div><p>Aquí va el testimonio de tu tercer cliente real</p></div></div>
+      <div class="testi"><div class="testi__placeholder"><div class="testi__placeholder-ico">🏪</div><p>Aquí va tu segundo testimonio real</p></div></div>
+      <div class="testi"><div class="testi__placeholder"><div class="testi__placeholder-ico">🏪</div><p>Aquí va tu tercer testimonio real</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- DEMO -->
 <section class="demo" id="demo">
-  <div class="demo__bg"></div>
-  <div class="wrap demo__inner">
-    <div class="demo__text">
-      <div class="section-label">Sin riesgo</div>
-      <h2 class="section-title" data-i18n="demo.title">Probalo antes de pagar</h2>
-      <p class="section-sub" data-i18n="demo.sub">Accedé al panel de demo e instalá la PWA en tu celular. Viví la experiencia completa.</p>
-      <div class="demo__actions"><a class="btn btn--primary btn--lg" href="#" data-i18n="demo.cta">Ver demo ahora</a></div>
-      <div class="demo__chips">
-        <span class="chip">📱 <span data-i18n="demo.pwa_label">Instalá la app en tu celular</span></span>
-        <span class="chip">🖥️ <span data-i18n="demo.panel_label">Explorá el panel admin</span></span>
+  <div class="container">
+    <div class="demo__inner">
+      <div>
+        <div class="eyebrow">Sin riesgo</div>
+        <h2 class="section-h" style="color:#fff" data-i18n="demo.title">Probalo antes de pagar</h2>
+        <p class="demo__sub" data-i18n="demo.sub">Accedé al panel de demo e instalá la PWA en tu celular. Viví la experiencia completa como si fuera tu negocio.</p>
+        <div class="demo__ctas">
+          <a class="demo__btn-white" href="#" data-i18n="demo.cta">Ver demo ahora →</a>
+        </div>
+        <div class="demo__chips">
+          <span class="chip">📱 <span data-i18n="demo.pwa_label">Instalá la app en tu celular</span></span>
+          <span class="chip">🖥️ <span data-i18n="demo.panel_label">Explorá el panel admin</span></span>
+        </div>
       </div>
-    </div>
-    <div class="demo__visual">
-      <!-- 🐾 CAMBIAR → screenshot real del panel de administración -->
-      <div class="demo__img-wrap"><img class="demo__img" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80" alt="Demo del sistema" loading="lazy"/></div>
+      <div class="demo__visual">
+        <!-- 🐾 CAMBIAR → screenshot real del panel de administración -->
+        <div class="demo__img-wrap">
+          <img class="demo__img" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80" alt="Panel demo"/>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PRECIOS -->
-<section class="pricing" id="pricing">
-  <div class="wrap">
-    <div class="section-label">Transparente</div>
-    <h2 class="section-title" data-i18n="pricing.title">Planes simples y transparentes</h2>
-    <p class="section-sub" data-i18n="pricing.sub">Sin cargos ocultos. Sin permanencia. Cancelás cuando querés.</p>
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="eyebrow" style="display:block;text-align:center">Transparente</div>
+    <h2 class="section-h section-h--center" data-i18n="pricing.title">Planes simples y transparentes</h2>
+    <p class="section-sub section-sub--center" data-i18n="pricing.sub">Sin cargos ocultos. Sin permanencia. Cancelás cuando querés.</p>
     <div class="pricing__grid">
-      <div class="plan-card">
-        <div class="plan-card__name" data-i18n="pricing.base_name">Base</div>
-        <div class="plan-card__price"><span class="plan-card__currency" data-i18n="pricing.currency">USD</span><span class="plan-card__amount" data-i18n="pricing.base_price">24.90</span><span class="plan-card__period">/<span data-i18n="pricing.monthly">mes</span></span></div>
-        <p class="plan-card__desc" data-i18n="pricing.base_desc">Para negocios que arrancan con fidelización simple.</p>
-        <ul class="plan-card__features">
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f1">1 sucursal</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f2">Sellos o puntos</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f3">Hasta 3 usuarios del panel</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f4">Hasta 8 campañas por mes</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f5">Reportes básicos</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.base_f6">Soporte estándar</span></li>
+      <div class="plan">
+        <div class="plan__name" data-i18n="pricing.base_name">Base</div>
+        <div class="plan__price">
+          <span class="plan__cur" data-i18n="pricing.currency">USD</span>
+          <span class="plan__amt" data-i18n="pricing.base_price">24.90</span>
+          <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
+        </div>
+        <p class="plan__desc" data-i18n="pricing.base_desc">Para negocios que arrancan con fidelización simple.</p>
+        <ul class="plan__list">
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f1">1 sucursal</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f2">Sellos o puntos</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f3">Hasta 3 usuarios del panel</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f4">Hasta 8 campañas por mes</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f5">Reportes básicos</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f6">Soporte estándar</span></li>
         </ul>
-        <a class="btn btn--outline btn--full" href="#contacto" data-i18n="pricing.base_cta">Empezar con Base</a>
+        <a class="btn-outline" href="#contacto" data-i18n="pricing.base_cta">Empezar con Base</a>
       </div>
-      <div class="plan-card plan-card--featured">
-        <div class="plan-card__badge" data-i18n="pricing.popular_badge">Más popular</div>
-        <div class="plan-card__name" data-i18n="pricing.pro_name">Pro</div>
-        <div class="plan-card__price"><span class="plan-card__currency" data-i18n="pricing.currency">USD</span><span class="plan-card__amount" data-i18n="pricing.pro_price">39.90</span><span class="plan-card__period">/<span data-i18n="pricing.monthly">mes</span></span></div>
-        <p class="plan-card__desc" data-i18n="pricing.pro_desc">Para negocios en crecimiento que quieren más herramientas.</p>
-        <ul class="plan-card__features">
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f1">Hasta 5 sucursales</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f2">Sellos y puntos simultáneos</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f3">Hasta 10 usuarios del panel</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f4">Hasta 30 campañas por mes</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f5">Automatizaciones</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f6">Reportes avanzados</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f7">API / Webhook</span></li>
-          <li><span class="check">✓</span><span data-i18n="pricing.pro_f8">Soporte prioritario</span></li>
+      <div class="plan plan--featured">
+        <div class="plan__badge" data-i18n="pricing.popular_badge">Más popular</div>
+        <div class="plan__name" data-i18n="pricing.pro_name">Pro</div>
+        <div class="plan__price">
+          <span class="plan__cur" data-i18n="pricing.currency">USD</span>
+          <span class="plan__amt" data-i18n="pricing.pro_price">39.90</span>
+          <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
+        </div>
+        <p class="plan__desc" data-i18n="pricing.pro_desc">Para negocios en crecimiento que quieren más herramientas.</p>
+        <ul class="plan__list">
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f1">Hasta 5 sucursales</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f2">Sellos y puntos simultáneos</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f3">Hasta 10 usuarios del panel</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f4">Hasta 30 campañas por mes</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f5">Automatizaciones</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f6">Reportes avanzados</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f7">API / Webhook</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f8">Soporte prioritario</span></li>
         </ul>
-        <a class="btn btn--primary btn--full" href="#contacto" data-i18n="pricing.pro_cta">Empezar con Pro</a>
+        <a class="btn-primary btn-primary btn--full" style="width:100%;justify-content:center;display:flex" href="#contacto" data-i18n="pricing.pro_cta">Empezar con Pro</a>
       </div>
     </div>
-    <div class="pricing__footer">
-      <p data-i18n="pricing.payment_text">Tarjeta de crédito o débito por Stripe. En Argentina también por Mercado Pago.</p>
+    <div class="pricing__note">
+      <p data-i18n="pricing.payment_text">Tarjeta de crédito o débito vía Stripe. En Argentina también por Mercado Pago.</p>
       <p data-i18n="pricing.cancel_text">Cancelás en cualquier momento. El servicio sigue activo hasta el fin del período pago.</p>
     </div>
   </div>
@@ -333,18 +428,18 @@
 
 <!-- FAQ -->
 <section class="faq" id="faq">
-  <div class="wrap">
-    <div class="section-label">Dudas</div>
-    <h2 class="section-title" data-i18n="faq.title">Preguntas frecuentes</h2>
+  <div class="container">
+    <div class="eyebrow" style="display:block;text-align:center">Dudas</div>
+    <h2 class="section-h section-h--center" data-i18n="faq.title">Preguntas frecuentes</h2>
     <div class="faq__list">
       <details class="faq__item"><summary data-i18n="faq.q1">¿Mis clientes tienen que descargar una app?</summary><p data-i18n="faq.a1">No. AmoMisClientes usa tecnología PWA: tus clientes instalan la app directamente desde el navegador en 2 clics, sin App Store ni Play Store.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q2">¿La app tiene mi logo y mis colores?</summary><p data-i18n="faq.a2">Sí. Configurás tu identidad visual completa: logo, ícono que aparece en el celular, colores de la app. Tus clientes ven tu marca, no la nuestra.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q3">¿Necesito hardware especial o una tablet en caja?</summary><p data-i18n="faq.a3">No. Generás el QR desde tu propio celular o el de tu empleado. Sin inversión en hardware.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal y el Pro hasta 5. Cada sucursal tiene su dirección y geolocalización en el mapa.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q5">¿Cómo se paga?</summary><p data-i18n="faq.a5">Por Stripe con tarjeta de crédito o débito. En Argentina también por Mercado Pago. Pago mensual, sin compromiso de permanencia.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q6">¿Puedo cancelar cuando quiero?</summary><p data-i18n="faq.a6">Sí. Cancelás en cualquier momento desde tu panel. El servicio sigue activo hasta el fin del período pago.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q7">¿Qué pasa con mis datos si cancelo?</summary><p data-i18n="faq.a7">Tus datos y los de tus clientes se conservan en nuestros servidores por 90 días. Nunca compartimos datos con terceros.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q8">¿Se puede integrar con mi sistema de facturación?</summary><p data-i18n="faq.a8">Sí. El plan Pro incluye integración API/Webhook básica para conectar con tu POS o ERP.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q3">¿Necesito hardware especial o una tablet en caja?</summary><p data-i18n="faq.a3">No. Generás el QR desde tu propio celular o el de tu empleado. Sin inversión en hardware adicional.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal y el Pro hasta 5. Cada sucursal tiene dirección y geolocalización en el mapa.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q5">¿Cómo se paga?</summary><p data-i18n="faq.a5">Por Stripe con tarjeta de crédito o débito. En Argentina también por Mercado Pago. Pago mensual, sin permanencia.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q6">¿Puedo cancelar cuando quiero?</summary><p data-i18n="faq.a6">Sí. Cancelás cuando quieras desde tu panel. El servicio sigue activo hasta el fin del período pago.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q7">¿Qué pasa con mis datos si cancelo?</summary><p data-i18n="faq.a7">Tus datos y los de tus clientes se conservan 90 días. Nunca compartimos ni usamos datos de negocios o clientes con terceros.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q8">¿Se puede integrar con mi sistema de facturación?</summary><p data-i18n="faq.a8">Sí. El plan Pro incluye API/Webhook básico para conectar con tu POS o ERP y sumar puntos automáticamente.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q9">¿Funciona para negocios con clientes que hablan otro idioma?</summary><p data-i18n="faq.a9">Sí. La app del cliente es multiidioma: español, inglés y portugués. Ideal para zonas turísticas.</p></details>
     </div>
   </div>
@@ -352,50 +447,57 @@
 
 <!-- CONTACTO -->
 <section class="contact" id="contacto">
-  <div class="contact__bg"></div>
-  <div class="wrap contact__inner">
-    <div class="section-label">¿Hablamos?</div>
-    <h2 class="section-title" data-i18n="contact.title">¿Querés ver cómo queda para tu negocio?</h2>
-    <p class="section-sub" data-i18n="contact.sub">Escribinos y coordinamos una demo personalizada para tu rubro.</p>
-    <div class="contact__actions">
-      <a class="btn btn--whatsapp btn--lg" href="https://wa.me/5493XXXXXXXXX" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-i18n="contact.whatsapp_label">Escribir por WhatsApp</span>
-      </a>
-      <a class="btn btn--ghost btn--lg" href="mailto:hola@amomisclientes.com"><span data-i18n="contact.email_label">Enviar email</span></a>
+  <div class="container">
+    <div class="contact__inner">
+      <div class="eyebrow">¿Hablamos?</div>
+      <h2 class="section-h" data-i18n="contact.title">¿Querés ver cómo queda para tu negocio?</h2>
+      <p class="contact__sub" data-i18n="contact.sub">Escribinos y coordinamos una demo personalizada para tu rubro.</p>
+      <div class="contact__ctas">
+        <a class="btn-wa" href="https://wa.me/5493XXXXXXXXX" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="contact.whatsapp_label">Escribir por WhatsApp</span>
+        </a>
+        <a class="btn-ghost-white" href="mailto:hola@amomisclientes.com" data-i18n="contact.email_label">Enviar email</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="wrap footer__inner">
-    <div class="footer__brand">
-      <a class="nav__logo" href="/"><span class="nav__logo-icon">A</span><span>AmoMisClientes</span></a>
-      <p data-i18n="footer.tagline">Tu app de fidelización con tu marca.</p>
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="nav__logo" href="/" style="color:#fff;margin-bottom:12px;display:inline-flex">
+          <span class="nav__logo-mark">A</span>AmoMisClientes
+        </a>
+        <p class="footer__tagline" data-i18n="footer.tagline">Tu app de fidelización con tu marca.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title" data-i18n="footer.links_title">Producto</div>
+        <a href="#como-funciona" data-i18n="footer.link_features">Cómo funciona</a>
+        <a href="#precios" data-i18n="footer.link_pricing">Planes</a>
+        <a href="#demo" data-i18n="footer.link_demo">Demo</a>
+        <a href="#faq" data-i18n="footer.link_faq">Preguntas frecuentes</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title" data-i18n="footer.legal_title">Legal</div>
+        <a href="/terminos" data-i18n="footer.link_terms">Términos y condiciones</a>
+        <a href="/privacidad" data-i18n="footer.link_privacy">Política de privacidad</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title" data-i18n="footer.contact_title">Contacto</div>
+        <a href="mailto:hola@amomisclientes.com">hola@amomisclientes.com</a>
+        <div class="footer__langs"><a href="?lang=es">ES</a> · <a href="?lang=pt">PT</a> · <a href="?lang=en">EN</a></div>
+      </div>
     </div>
-    <div class="footer__col">
-      <div class="footer__col-title" data-i18n="footer.links_title">Producto</div>
-      <a href="#features" data-i18n="footer.link_features">Cómo funciona</a>
-      <a href="#pricing" data-i18n="footer.link_pricing">Planes</a>
-      <a href="#demo" data-i18n="footer.link_demo">Demo</a>
-      <a href="#faq" data-i18n="footer.link_faq">Preguntas frecuentes</a>
-    </div>
-    <div class="footer__col">
-      <div class="footer__col-title" data-i18n="footer.legal_title">Legal</div>
-      <a href="/terminos" data-i18n="footer.link_terms">Términos y condiciones</a>
-      <a href="/privacidad" data-i18n="footer.link_privacy">Política de privacidad</a>
-    </div>
-    <div class="footer__col">
-      <div class="footer__col-title" data-i18n="footer.contact_title">Contacto</div>
-      <a href="mailto:hola@amomisclientes.com">hola@amomisclientes.com</a>
-      <div class="footer__lang"><a href="?lang=es">ES</a> · <a href="?lang=pt">PT</a> · <a href="?lang=en">EN</a></div>
+    <div class="footer__bottom">
+      <p>© <span id="y"></span> <span data-i18n="footer.brand">AmoMisClientes — Pro Business One</span> — <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
     </div>
   </div>
-  <div class="footer__bottom"><p>© <span id="y"></span> <span data-i18n="footer.brand">AmoMisClientes — Pro Business One</span> — <span data-i18n="footer.rights">Todos los derechos reservados.</span></p></div>
 </footer>
 
-<!-- CHAT FLOTANTE -->
+<!-- CHAT -->
 <div class="amo-chat" id="amo-chat-root">
   <div class="amo-chat__backdrop" id="amo-chat-backdrop" hidden aria-hidden="true"></div>
   <button type="button" class="amo-chat__fab" id="amo-chat-fab" aria-expanded="false" aria-controls="amo-chat-panel">
@@ -409,7 +511,7 @@
       <button type="button" class="amo-chat__close" id="amo-chat-close" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
     </div>
     <div class="amo-chat__body">
-      <iframe class="amo-chat__iframe" id="amo-chat-iframe" title="Chat AmoMisClientes" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals" hidden></iframe>
+      <iframe class="amo-chat__iframe" id="amo-chat-iframe" title="Chat" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals" hidden></iframe>
       <div class="amo-chat__fallback" id="amo-chat-fallback"><strong data-i18n="chat.fallbackTitle">Chat próximamente</strong><p style="margin:0"><span data-i18n="chat.fallbackBody">Mientras tanto escribinos por WhatsApp.</span></p></div>
     </div>
   </div>
@@ -417,11 +519,11 @@
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
-  window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('nav--scrolled',window.scrollY>40);});
-  var burger=document.getElementById('nav-burger'),mobile=document.getElementById('nav-mobile');
-  burger.addEventListener('click',function(){var open=mobile.hasAttribute('hidden');if(open){mobile.removeAttribute('hidden');burger.setAttribute('aria-expanded','true');}else{mobile.setAttribute('hidden','');burger.setAttribute('aria-expanded','false');}});
-  document.querySelectorAll('.nav__mobile a').forEach(function(a){a.addEventListener('click',function(){mobile.setAttribute('hidden','');burger.setAttribute('aria-expanded','false');});});
-  document.querySelectorAll('.faq__item').forEach(function(item){item.addEventListener('toggle',function(){if(this.open){document.querySelectorAll('.faq__item').forEach(function(o){if(o!==item)o.removeAttribute('open');});}});});
+  window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10);});
+  var b=document.getElementById('nav-burger'),m=document.getElementById('nav-mobile');
+  b.addEventListener('click',function(){var o=m.hasAttribute('hidden');o?(m.removeAttribute('hidden'),b.setAttribute('aria-expanded','true')):(m.setAttribute('hidden',''),b.setAttribute('aria-expanded','false'));});
+  document.querySelectorAll('.nav__mobile a').forEach(function(a){a.addEventListener('click',function(){m.setAttribute('hidden','');b.setAttribute('aria-expanded','false');});});
+  document.querySelectorAll('.faq__item').forEach(function(item){item.addEventListener('toggle',function(){if(this.open)document.querySelectorAll('.faq__item').forEach(function(o){if(o!==item)o.removeAttribute('open');});});});
 </script>
 <script src="js/chat-config.js"></script>
 <script src="js/i18n.js"></script>
