@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "AmoMisClientes — Sua presença digital para clientes",
+    "description": "Sistema para negócios: PWA, visibilidade e ferramentas para vender mais."
+  },
+  "nav": {
+    "features": "O que oferecemos",
+    "pricing": "Planos",
+    "faq": "Perguntas",
+    "contact": "Contato"
+  },
+  "hero": {
+    "headline": "Mais perto dos seus clientes, pelo celular",
+    "sub": "Uma solução clara para o seu negócio parecer profissional e ser fácil de encontrar.",
+    "ctaPrimary": "Começar",
+    "ctaSecondary": "Falar com vendas"
+  },
+  "features": {
+    "title": "Feito para negócios reais",
+    "f1Title": "Presença moderna",
+    "f1Text": "Experiência rápida e fácil de usar no celular.",
+    "f2Title": "Marca e confiança",
+    "f2Text": "Comunicação clara com o seu público.",
+    "f3Title": "Escalável",
+    "f3Text": "Cresça sem refazer tudo do zero."
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  },
+  "chat": {
+    "open": "Abrir chat de ajuda",
+    "close": "Fechar chat",
+    "title": "Como podemos ajudar?",
+    "subtitle": "Assistente AmoMisClientes · PBO-AssistantIA",
+    "fallbackTitle": "Conecte o chat PBO",
+    "fallbackBody": "Defina iframeUrl em js/chat-config.js. Quando ativo, a conversa roda no PBO-AssistantIA."
+  }
+}

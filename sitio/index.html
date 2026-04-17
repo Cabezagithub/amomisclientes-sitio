@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <title>AmoMisClientes</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/chat.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">AmoMisClientes</a>
+        <nav aria-label="Principal">
+          <ul>
+            <li><a href="#features" data-i18n="nav.features">Qué ofrecemos</a></li>
+            <li><a href="#pricing" data-i18n="nav.pricing">Planes</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
+            <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <h1 data-i18n="hero.headline">Más cerca de tus clientes, desde el móvil</h1>
+          <p class="sub" data-i18n="hero.sub">
+            Una solución clara para que tu negocio se vea profesional y sea fácil de encontrar.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#pricing" data-i18n="hero.ctaPrimary">Empezar</a>
+            <a class="btn btn-ghost" href="#contacto" data-i18n="hero.ctaSecondary">Hablar con ventas</a>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.8125rem; color: var(--color-muted)">
+            Demo i18n: <a href="?lang=es">ES</a> · <a href="?lang=en">EN</a> · <a href="?lang=pt">PT</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="features" class="block">
+        <div class="wrap">
+          <h2 data-i18n="features.title">Pensado para negocios reales</h2>
+          <div class="grid-3">
+            <article class="card">
+              <h3 data-i18n="features.f1Title">Presencia moderna</h3>
+              <p data-i18n="features.f1Text">Experiencia rápida y usable en celular.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="features.f2Title">Marca y confianza</h3>
+              <p data-i18n="features.f2Text">Comunicación clara con tu audiencia.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="features.f3Title">Escalable</h3>
+              <p data-i18n="features.f3Text">Crece sin rehacer todo desde cero.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="block">
+        <div class="wrap">
+          <h2 data-i18n="nav.pricing">Planes</h2>
+          <p class="sub" style="margin: 0">Contenido de precios: definir en JSON y secciones HTML.</p>
+        </div>
+      </section>
+
+      <section id="faq" class="block">
+        <div class="wrap">
+          <h2 data-i18n="nav.faq">Preguntas</h2>
+          <p class="sub" style="margin: 0">FAQ: mismo sistema de claves en <code>locales/es.json</code>.</p>
+        </div>
+      </section>
+
+      <section id="contacto" class="block">
+        <div class="wrap">
+          <h2 data-i18n="nav.contact">Contacto</h2>
+          <p class="sub" style="margin: 0">Chat con asistente (botón flotante) y formularios cuando los agreguemos.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="amo-chat" id="amo-chat-root">
+      <div class="amo-chat__backdrop" id="amo-chat-backdrop" hidden aria-hidden="true"></div>
+      <button
+        type="button"
+        class="amo-chat__fab"
+        id="amo-chat-fab"
+        aria-expanded="false"
+        aria-controls="amo-chat-panel"
+      >
+        <span class="amo-chat__fab-pulse" aria-hidden="true"></span>
+        <svg class="amo-chat__fab-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M12 3C7.03 3 3 6.58 3 11c0 2.13 1.07 4.07 2.82 5.5L4.5 20.5c-.12.35.22.68.56.56l3.65-1.22A9.9 9.9 0 0012 19c4.97 0 9-3.58 9-8s-4.03-8-9-8z"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+          <path d="M8.5 11h.01M12 11h.01M15.5 11h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <span class="amo-chat-sr-only" data-i18n="chat.open">Abrir chat</span>
+      </button>
+      <div class="amo-chat__panel" id="amo-chat-panel" hidden role="dialog" aria-modal="true" aria-labelledby="amo-chat-title">
+        <div class="amo-chat__header">
+          <div>
+            <h2 id="amo-chat-title" data-i18n="chat.title">¿En qué podemos ayudarte?</h2>
+            <p class="amo-chat__subtitle" data-i18n="chat.subtitle">Asistente AmoMisClientes · PBO-AssistantIA</p>
+          </div>
+          <button type="button" class="amo-chat__close" id="amo-chat-close" aria-label="Cerrar">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="amo-chat__body">
+          <iframe
+            class="amo-chat__iframe"
+            id="amo-chat-iframe"
+            title="Chat AmoMisClientes"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+            hidden
+          ></iframe>
+          <div class="amo-chat__fallback" id="amo-chat-fallback">
+            <strong data-i18n="chat.fallbackTitle">Conectá el chat con PBO</strong>
+            <p style="margin: 0">
+              <span data-i18n="chat.fallbackBody"
+                >Definí iframeUrl en js/chat-config.js. Cuando esté activo, la conversación corre en PBO-AssistantIA.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="y"></span> AmoMisClientes — <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/chat-config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/chat.js"></script>
+    <script>
+      amoI18n
+        .init()
+        .then(function () {
+          amoChat.init();
+        })
+        .catch(function (e) {
+          console.error(e);
+          amoChat.init();
+        });
+    </script>
+  </body>
+</html>

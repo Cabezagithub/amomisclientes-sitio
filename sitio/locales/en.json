@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "AmoMisClientes — Your digital presence for customers",
+    "description": "A system for businesses: PWA, visibility, and tools built to sell more."
+  },
+  "nav": {
+    "features": "What we offer",
+    "pricing": "Plans",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Closer to your customers, from their phone",
+    "sub": "A clear way to look professional and be easy to find.",
+    "ctaPrimary": "Get started",
+    "ctaSecondary": "Talk to sales"
+  },
+  "features": {
+    "title": "Built for real businesses",
+    "f1Title": "Modern presence",
+    "f1Text": "Fast, mobile-friendly experience.",
+    "f2Title": "Brand and trust",
+    "f2Text": "Clear communication with your audience.",
+    "f3Title": "Scalable",
+    "f3Text": "Grow without rebuilding from scratch."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "chat": {
+    "open": "Open help chat",
+    "close": "Close chat",
+    "title": "How can we help?",
+    "subtitle": "AmoMisClientes assistant · PBO-AssistantIA",
+    "fallbackTitle": "Connect PBO chat",
+    "fallbackBody": "Set iframeUrl in js/chat-config.js. When active, the conversation runs in PBO-AssistantIA."
+  }
+}
