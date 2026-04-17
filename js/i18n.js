@@ -64,9 +64,11 @@
   }
 
   function renderLanguageSelector(locale) {
-    const selector = document.getElementById('amo-lang-selector');
-    if (!selector) return;
-    selector.value = locale;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      const isActive = el.getAttribute('data-lang') === locale;
+      el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      el.classList.toggle('is-active', isActive);
+    });
   }
 
   async function loadMergedDict(locale) {
@@ -84,11 +86,22 @@
   }
 
   function bindLanguageSelector() {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      if (el.dataset.bound === 'true') return;
+      el.dataset.bound = 'true';
+      el.addEventListener('click', function () {
+        const next = el.getAttribute('data-lang');
+        window.amoI18n.setLocale(next);
+      });
+    });
+  }
+
+  function bindLanguageSelectorFallback() {
     const selector = document.getElementById('amo-lang-selector');
     if (!selector || selector.dataset.bound === 'true') return;
     selector.dataset.bound = 'true';
     selector.addEventListener('change', function (event) {
-      const next = event.target.value;
+      const next = String(event.target.value || '');
       window.amoI18n.setLocale(next);
     });
   }
@@ -105,6 +118,7 @@
       window.amoI18nLastDict = merged;
       applyStrings(merged);
       bindLanguageSelector();
+      bindLanguageSelectorFallback();
       renderLanguageSelector(locale);
       return { locale, dict: merged };
     },

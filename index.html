@@ -20,13 +20,16 @@
             <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
           </ul>
         </nav>
-        <div class="lang-switcher">
-          <label class="lang-switcher__label" for="amo-lang-selector">Idioma</label>
-          <select id="amo-lang-selector" class="lang-switcher__select" aria-label="Seleccionar idioma">
-            <option value="es">🇪🇸 ES</option>
-            <option value="en">🇺🇸 EN</option>
-            <option value="pt">🇧🇷 PT</option>
-          </select>
+        <div class="lang-switcher" role="group" aria-label="Seleccionar idioma">
+          <button type="button" class="lang-switcher__flag" data-lang="es" aria-pressed="false" title="Español">
+            <img src="../flags/espanol90x90.png" alt="Español" />
+          </button>
+          <button type="button" class="lang-switcher__flag" data-lang="en" aria-pressed="false" title="English">
+            <img src="../flags/ingles90x90.png" alt="English" />
+          </button>
+          <button type="button" class="lang-switcher__flag" data-lang="pt" aria-pressed="false" title="Português">
+            <img src="../flags/portugues-brasil90x90.png" alt="Português" />
+          </button>
         </div>
       </div>
     </header>

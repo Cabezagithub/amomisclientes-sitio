@@ -63,22 +63,39 @@ a:hover {
   gap: 0.5rem;
 }
 
-.lang-switcher__label {
-  color: var(--color-muted);
-  font-size: 0.875rem;
-}
-
-.lang-switcher__select {
-  border-radius: 0.5rem;
+.lang-switcher__flag {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: var(--color-surface);
-  color: var(--color-text);
-  font: inherit;
-  font-size: 0.875rem;
-  padding: 0.35rem 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.75;
+  transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease;
 }
 
-.lang-switcher__select:focus {
+.lang-switcher__flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lang-switcher__flag:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.lang-switcher__flag.is-active {
+  opacity: 1;
+  border-color: var(--color-accent);
+}
+
+.lang-switcher__flag:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: 1px;
 }
