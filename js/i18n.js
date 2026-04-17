@@ -6,6 +6,8 @@
   const STORAGE_KEY = 'amo_lang';
   const DEFAULT_LOCALE = 'es';
   const SUPPORTED = ['es', 'en', 'pt'];
+  let currentLocale = DEFAULT_LOCALE;
+  let cachedEs = null;
 
   function getQueryLang() {
     const q = new URLSearchParams(window.location.search).get('lang');
@@ -13,12 +15,7 @@
   }
 
   function resolveLocale() {
-    return (
-      getQueryLang() ||
-      localStorage.getItem(STORAGE_KEY) ||
-      (navigator.language || DEFAULT_LOCALE).slice(0, 2).toLowerCase() ||
-      DEFAULT_LOCALE
-    );
+    return getQueryLang() || localStorage.getItem(STORAGE_KEY) || DEFAULT_LOCALE;
   }
 
   function getByPath(obj, path) {
@@ -66,26 +63,64 @@
     if (desc && meta) meta.setAttribute('content', desc);
   }
 
+  function renderLanguageSelector(locale) {
+    const selector = document.getElementById('amo-lang-selector');
+    if (!selector) return;
+    selector.value = locale;
+  }
+
+  async function loadMergedDict(locale) {
+    if (!cachedEs) cachedEs = await loadJson('locales/es.json');
+    let merged = cachedEs;
+    if (locale !== DEFAULT_LOCALE) {
+      try {
+        const loc = await loadJson('locales/' + locale + '.json');
+        merged = deepMerge(cachedEs, loc);
+      } catch (_) {
+        merged = cachedEs;
+      }
+    }
+    return merged;
+  }
+
+  function bindLanguageSelector() {
+    const selector = document.getElementById('amo-lang-selector');
+    if (!selector || selector.dataset.bound === 'true') return;
+    selector.dataset.bound = 'true';
+    selector.addEventListener('change', function (event) {
+      const next = event.target.value;
+      window.amoI18n.setLocale(next);
+    });
+  }
+
   window.amoI18n = {
     init: async function () {
       let locale = resolveLocale();
       if (!SUPPORTED.includes(locale)) locale = DEFAULT_LOCALE;
       localStorage.setItem(STORAGE_KEY, locale);
-      document.documentElement.lang = locale === 'es' ? 'es' : locale;
+      currentLocale = locale;
+      document.documentElement.lang = locale;
 
-      const es = await loadJson('locales/es.json');
-      let merged = es;
-      if (locale !== DEFAULT_LOCALE) {
-        try {
-          const loc = await loadJson('locales/' + locale + '.json');
-          merged = deepMerge(es, loc);
-        } catch (_) {
-          merged = es;
-        }
-      }
+      const merged = await loadMergedDict(locale);
       window.amoI18nLastDict = merged;
       applyStrings(merged);
+      bindLanguageSelector();
+      renderLanguageSelector(locale);
       return { locale, dict: merged };
+    },
+    setLocale: async function (locale) {
+      if (!SUPPORTED.includes(locale)) return { locale: currentLocale, dict: window.amoI18nLastDict || null };
+      localStorage.setItem(STORAGE_KEY, locale);
+      currentLocale = locale;
+      document.documentElement.lang = locale;
+      const merged = await loadMergedDict(locale);
+      window.amoI18nLastDict = merged;
+      applyStrings(merged);
+      renderLanguageSelector(locale);
+      return { locale, dict: merged };
+    },
+    getLocale: function () {
+      return currentLocale;
     },
   };
 })();

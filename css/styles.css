@@ -57,6 +57,32 @@ a:hover {
   gap: var(--space);
 }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-switcher__label {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.lang-switcher__select {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.lang-switcher__select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
 .logo {
   font-weight: 700;
   font-size: 1.125rem;
