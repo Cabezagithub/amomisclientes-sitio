@@ -29,6 +29,7 @@
 
 /* RESET */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden] { display: none !important; }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--gray-800);line-height:1.6;font-size:16px;overflow-x:hidden}
 img{max-width:100%;display:block;object-fit:cover}
