@@ -4,7 +4,7 @@
  */
 window.AMO_PBO_CHAT_CONFIG = {
   /** URL base del embed (sin query opcionales si preferís armarlos en iframeParams) */
-  iframeUrl: 'https://assistantia.syspboia.com/public/embed/chat/index.html',
+  iframeUrl: 'https://servidoria.syspboia.com/public/embed/chat/index.html?emp_id=98&lang=es',
 
   /** Se añaden como ?clave=valor a iframeUrl */
   iframeParams: {
