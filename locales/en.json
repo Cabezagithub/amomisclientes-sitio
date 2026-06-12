@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "AmoMisClientes — Your digital presence for customers",
-    "description": "A system for businesses: PWA, visibility, and tools built to sell more."
+    "title": "AmoMisClientes — Digital loyalty for your business",
+    "description": "SaaS loyalty system for businesses. Your branded app on your customers' phones. Stamps, points and rewards that bring them back."
   },
   "nav": {
-    "features": "What we offer",
+    "features": "How it works",
     "pricing": "Plans",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "demo": "See demo"
   },
   "hero": {
-    "headline": "Closer to your customers, from their phone",
-    "sub": "A clear way to look professional and be easy to find.",
-    "ctaPrimary": "Get started",
-    "ctaSecondary": "Talk to sales"
+    "headline": "Your business on your customers' phones",
+    "sub": "Your icon. Your colors. Your brand. No App Store, no Play Store. Stamps, points and rewards that bring them back.",
+    "ctaPrimary": "See free demo",
+    "ctaSecondary": "Talk to sales",
+    "badge": "No commitment · Cancel anytime"
   },
   "features": {
     "title": "Built for real businesses",
@@ -24,7 +26,61 @@
     "f3Title": "Scalable",
     "f3Text": "Grow without rebuilding from scratch."
   },
+  "contact": {
+    "eyebrow": "Let's talk",
+    "title": "Want to see how it looks for your business?",
+    "sub": "Send us a message and we'll set up a personalized demo for your industry.",
+    "f_name": "Name *",
+    "f_name_ph": "Your name",
+    "f_email": "Email *",
+    "f_email_ph": "you@email.com",
+    "f_company": "Business / Company",
+    "f_company_ph": "Your business name",
+    "f_phone": "Mobile / WhatsApp",
+    "f_phone_ph": "+1 555 123-4567",
+    "f_country": "Country",
+    "f_country_ph": "United States",
+    "f_rubro": "Industry",
+    "f_rubro_default": "— Your industry —",
+    "f_rubro_1": "Food & Beverage / Café",
+    "f_rubro_2": "Hair Salon / Beauty",
+    "f_rubro_3": "Gym / Sports",
+    "f_rubro_4": "Retail",
+    "f_rubro_5": "Services",
+    "f_rubro_6": "Other",
+    "f_sucursales": "Locations",
+    "f_suc_default": "— Number of locations —",
+    "f_suc_1": "1 location",
+    "f_suc_2": "2 to 5 locations",
+    "f_suc_3": "More than 5 locations",
+    "f_interest": "How can we help? *",
+    "f_interest_default": "— Select an option —",
+    "f_opt1": "I want to see a demo",
+    "f_opt2": "Pricing and plans inquiry",
+    "f_opt3": "I'm a customer, I need support",
+    "f_opt4": "Other",
+    "f_message": "Message *",
+    "f_message_ph": "Tell us about your business and what you're looking for…",
+    "f_submit": "Send message",
+    "f_legal_pre": "By submitting you accept our",
+    "f_legal_link": "privacy policy",
+    "f_error": "Something went wrong. Please try again.",
+    "success": "Message received! We'll get back to you shortly.",
+    "whatsapp_alt": "Prefer WhatsApp?",
+    "whatsapp_label": "Chat on WhatsApp"
+  },
   "footer": {
+    "tagline": "Your loyalty app with your brand.",
+    "links_title": "Product",
+    "link_features": "How it works",
+    "link_pricing": "Plans",
+    "link_demo": "Demo",
+    "link_faq": "FAQ",
+    "legal_title": "Legal",
+    "link_terms": "Terms and conditions",
+    "link_privacy": "Privacy policy",
+    "contact_title": "Contact",
+    "brand": "AmoMisClientes — Pro Business One",
     "rights": "All rights reserved."
   },
   "chat": {
@@ -32,7 +88,7 @@
     "close": "Close chat",
     "title": "How can we help?",
     "subtitle": "AmoMisClientes assistant · PBO-AssistantIA",
-    "fallbackTitle": "Connect PBO chat",
-    "fallbackBody": "Set iframeUrl in js/chat-config.js. When active, the conversation runs in PBO-AssistantIA."
+    "fallbackTitle": "Chat coming soon",
+    "fallbackBody": "In the meantime, write to us on WhatsApp."
   }
 }

@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "AmoMisClientes — Sua presença digital para clientes",
-    "description": "Sistema para negócios: PWA, visibilidade e ferramentas para vender mais."
+    "title": "AmoMisClientes — Fidelização digital para o seu negócio",
+    "description": "Sistema SaaS de fidelização para negócios. Seu app com sua marca no celular dos seus clientes. Carimbos, pontos e prêmios que fazem voltar."
   },
   "nav": {
-    "features": "O que oferecemos",
+    "features": "Como funciona",
     "pricing": "Planos",
     "faq": "Perguntas",
-    "contact": "Contato"
+    "contact": "Contato",
+    "demo": "Ver demo"
   },
   "hero": {
-    "headline": "Mais perto dos seus clientes, pelo celularrrr",
-    "sub": "Uma solução clara para o seu negócio parecer profissional e ser fácil de encontrar.",
-    "ctaPrimary": "Começar",
-    "ctaSecondary": "Falar com vendas"
+    "headline": "Seu negócio no celular dos seus clientes",
+    "sub": "Com seu ícone. Com suas cores. Com sua marca. Sem App Store, sem Play Store. Carimbos, pontos e prêmios que fazem voltar.",
+    "ctaPrimary": "Ver demo grátis",
+    "ctaSecondary": "Falar com vendas",
+    "badge": "Sem fidelidade · Cancele quando quiser"
   },
   "features": {
     "title": "Feito para negócios reais",
@@ -24,7 +26,61 @@
     "f3Title": "Escalável",
     "f3Text": "Cresça sem refazer tudo do zero."
   },
+  "contact": {
+    "eyebrow": "Vamos conversar?",
+    "title": "Quer ver como fica para o seu negócio?",
+    "sub": "Entre em contato e combinamos uma demo personalizada para o seu ramo.",
+    "f_name": "Nome *",
+    "f_name_ph": "Seu nome",
+    "f_email": "E-mail *",
+    "f_email_ph": "seu@email.com",
+    "f_company": "Negócio / Empresa",
+    "f_company_ph": "Nome do seu negócio",
+    "f_phone": "Celular / WhatsApp",
+    "f_phone_ph": "+55 11 91234-5678",
+    "f_country": "País",
+    "f_country_ph": "Brasil",
+    "f_rubro": "Ramo",
+    "f_rubro_default": "— Seu ramo —",
+    "f_rubro_1": "Gastronomia / Cafeteria",
+    "f_rubro_2": "Cabeleireiro / Estética",
+    "f_rubro_3": "Academia / Esporte",
+    "f_rubro_4": "Comércio varejista",
+    "f_rubro_5": "Serviços",
+    "f_rubro_6": "Outro",
+    "f_sucursales": "Unidades",
+    "f_suc_default": "— Quantidade —",
+    "f_suc_1": "1 unidade",
+    "f_suc_2": "2 a 5 unidades",
+    "f_suc_3": "Mais de 5 unidades",
+    "f_interest": "Como posso ajudar? *",
+    "f_interest_default": "— Selecione uma opção —",
+    "f_opt1": "Quero ver uma demo",
+    "f_opt2": "Consultar preços e planos",
+    "f_opt3": "Já sou cliente, preciso de suporte",
+    "f_opt4": "Outro",
+    "f_message": "Mensagem *",
+    "f_message_ph": "Conte-nos sobre o seu negócio e o que você está buscando…",
+    "f_submit": "Enviar mensagem",
+    "f_legal_pre": "Ao enviar você aceita nossa",
+    "f_legal_link": "política de privacidade",
+    "f_error": "Houve um problema ao enviar. Por favor tente novamente.",
+    "success": "Mensagem recebida! Responderemos em breve.",
+    "whatsapp_alt": "Prefere WhatsApp?",
+    "whatsapp_label": "Escrever pelo WhatsApp"
+  },
   "footer": {
+    "tagline": "Seu app de fidelização com sua marca.",
+    "links_title": "Produto",
+    "link_features": "Como funciona",
+    "link_pricing": "Planos",
+    "link_demo": "Demo",
+    "link_faq": "Perguntas frequentes",
+    "legal_title": "Legal",
+    "link_terms": "Termos e condições",
+    "link_privacy": "Política de privacidade",
+    "contact_title": "Contato",
+    "brand": "AmoMisClientes — Pro Business One",
     "rights": "Todos os direitos reservados."
   },
   "chat": {
@@ -32,7 +88,7 @@
     "close": "Fechar chat",
     "title": "Como podemos ajudar?",
     "subtitle": "Assistente AmoMisClientes · PBO-AssistantIA",
-    "fallbackTitle": "Conecte o chat PBO",
-    "fallbackBody": "Defina iframeUrl em js/chat-config.js. Quando ativo, a conversa roda no PBO-AssistantIA."
+    "fallbackTitle": "Chat em breve",
+    "fallbackBody": "Enquanto isso, escreva pelo WhatsApp."
   }
 }

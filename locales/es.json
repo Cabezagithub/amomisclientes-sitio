@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "AmoMisClientes — Tu presencia digital para clientes",
-    "description": "Sistema para negocios: PWA, visibilidad y herramientas pensadas para vender más."
+    "title": "AmoMisClientes — Fidelización digital para tu negocio",
+    "description": "Sistema SaaS de fidelización para negocios. Tu app con tu marca en el celular de tus clientes. Sellos, puntos y premios que hacen volver."
   },
   "nav": {
-    "features": "Qué ofrecemos",
+    "features": "Cómo funciona",
     "pricing": "Planes",
     "faq": "Preguntas",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "demo": "Ver demo"
   },
   "hero": {
-    "headline": "Tu negocio en el celular de tus clientessssssssss",
-    "sub": "Una solución clara para que tu negocio se vea profesional y sea fácil de encontrar.",
-    "ctaPrimary": "Empezar",
-    "ctaSecondary": "Hablar con ventas"
+    "headline": "Tu negocio en el celular de tus clientes",
+    "sub": "Con tu ícono. Con tus colores. Con tu marca. Sin App Store, sin Play Store. Sellos, puntos y premios que hacen volver.",
+    "ctaPrimary": "Ver demo gratis",
+    "ctaSecondary": "Hablar con ventas",
+    "badge": "Sin permanencia · Cancelás cuando querés"
   },
   "features": {
     "title": "Pensado para negocios reales",
@@ -24,7 +26,61 @@
     "f3Title": "Escalable",
     "f3Text": "Crece sin rehacer todo desde cero."
   },
+  "contact": {
+    "eyebrow": "¿Hablamos?",
+    "title": "¿Querés ver cómo queda para tu negocio?",
+    "sub": "Escribinos y coordinamos una demo personalizada para tu rubro.",
+    "f_name": "Nombre *",
+    "f_name_ph": "Tu nombre",
+    "f_email": "Email *",
+    "f_email_ph": "tu@email.com",
+    "f_company": "Negocio / Empresa",
+    "f_company_ph": "Nombre de tu negocio",
+    "f_phone": "Móvil / WhatsApp",
+    "f_phone_ph": "+54 9 11 1234-5678",
+    "f_country": "País",
+    "f_country_ph": "Argentina",
+    "f_rubro": "Rubro",
+    "f_rubro_default": "— Tu rubro —",
+    "f_rubro_1": "Gastronomía / Cafetería",
+    "f_rubro_2": "Peluquería / Estética",
+    "f_rubro_3": "Gimnasio / Deporte",
+    "f_rubro_4": "Comercio minorista",
+    "f_rubro_5": "Servicios",
+    "f_rubro_6": "Otro",
+    "f_sucursales": "Sucursales",
+    "f_suc_default": "— Cantidad —",
+    "f_suc_1": "1 sucursal",
+    "f_suc_2": "2 a 5 sucursales",
+    "f_suc_3": "Más de 5 sucursales",
+    "f_interest": "¿En qué puedo ayudarte? *",
+    "f_interest_default": "— Seleccioná una opción —",
+    "f_opt1": "Quiero ver una demo",
+    "f_opt2": "Consultar precios y planes",
+    "f_opt3": "Ya soy cliente, necesito soporte",
+    "f_opt4": "Otro",
+    "f_message": "Mensaje *",
+    "f_message_ph": "Contanos sobre tu negocio y qué estás buscando…",
+    "f_submit": "Enviar mensaje",
+    "f_legal_pre": "Al enviar aceptás nuestra",
+    "f_legal_link": "política de privacidad",
+    "f_error": "Hubo un problema al enviar. Por favor intentá de nuevo.",
+    "success": "¡Mensaje recibido! Te respondemos a la brevedad.",
+    "whatsapp_alt": "¿Preferís WhatsApp?",
+    "whatsapp_label": "Escribir por WhatsApp"
+  },
   "footer": {
+    "tagline": "Tu app de fidelización con tu marca.",
+    "links_title": "Producto",
+    "link_features": "Cómo funciona",
+    "link_pricing": "Planes",
+    "link_demo": "Demo",
+    "link_faq": "Preguntas frecuentes",
+    "legal_title": "Legal",
+    "link_terms": "Términos y condiciones",
+    "link_privacy": "Política de privacidad",
+    "contact_title": "Contacto",
+    "brand": "AmoMisClientes — Pro Business One",
     "rights": "Todos los derechos reservados."
   },
   "chat": {
@@ -32,7 +88,7 @@
     "close": "Cerrar chat",
     "title": "¿En qué podemos ayudarte?",
     "subtitle": "Asistente AmoMisClientes · PBO-AssistantIA",
-    "fallbackTitle": "Conectá el chat con PBO",
-    "fallbackBody": "Definí iframeUrl en js/chat-config.js. Cuando esté activo, la conversación corre en PBO-AssistantIA."
+    "fallbackTitle": "Chat próximamente",
+    "fallbackBody": "Mientras tanto escribinos por WhatsApp."
   }
 }

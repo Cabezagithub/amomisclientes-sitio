@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="css/chat.css"/>
+  <!-- reCAPTCHA v3 — reemplazá YOUR_SITE_KEY con la site key del dominio -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY" async defer></script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG951C6SQ8"></script>
   <script>
@@ -457,16 +459,125 @@
 <section class="contact" id="contacto">
   <div class="container">
     <div class="contact__inner">
-      <div class="eyebrow">¿Hablamos?</div>
+      <div class="eyebrow" data-i18n="contact.eyebrow">¿Hablamos?</div>
       <h2 class="section-h" data-i18n="contact.title">¿Querés ver cómo queda para tu negocio?</h2>
       <p class="contact__sub" data-i18n="contact.sub">Escribinos y coordinamos una demo personalizada para tu rubro.</p>
-      <div class="contact__ctas">
-        <a class="btn-wa" href="https://wa.me/5493XXXXXXXXX" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+
+      <!-- Formulario de contacto -->
+      <div class="contact__form-wrap">
+        <form class="contact__form" id="contact-form" novalidate>
+          <!-- Honeypot: campo invisible para filtrar bots -->
+          <input type="text" name="extra" id="f-extra" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+
+          <div class="cf-row cf-row--2">
+            <div class="cf-field">
+              <label class="cf-label" for="f-name" data-i18n="contact.f_name">Nombre *</label>
+              <input class="cf-input" id="f-name" name="name" type="text" required minlength="2" autocomplete="name"
+                data-i18n-placeholder="contact.f_name_ph" placeholder="Tu nombre">
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="f-email" data-i18n="contact.f_email">Email *</label>
+              <input class="cf-input" id="f-email" name="email" type="email" required autocomplete="email"
+                data-i18n-placeholder="contact.f_email_ph" placeholder="tu@email.com">
+            </div>
+          </div>
+
+          <div class="cf-row cf-row--2">
+            <div class="cf-field">
+              <label class="cf-label" for="f-company" data-i18n="contact.f_company">Negocio / Empresa</label>
+              <input class="cf-input" id="f-company" name="company" type="text" autocomplete="organization"
+                data-i18n-placeholder="contact.f_company_ph" placeholder="Nombre de tu negocio">
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="f-phone" data-i18n="contact.f_phone">Móvil / WhatsApp</label>
+              <input class="cf-input" id="f-phone" name="phone" type="tel" autocomplete="tel"
+                data-i18n-placeholder="contact.f_phone_ph" placeholder="+54 9 11 1234-5678">
+            </div>
+          </div>
+
+          <div class="cf-row cf-row--3">
+            <div class="cf-field">
+              <label class="cf-label" for="f-country" data-i18n="contact.f_country">País</label>
+              <input class="cf-input" id="f-country" name="country" type="text" autocomplete="country-name"
+                data-i18n-placeholder="contact.f_country_ph" placeholder="Argentina">
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="f-rubro" data-i18n="contact.f_rubro">Rubro</label>
+              <select class="cf-input cf-select" id="f-rubro" name="rubro">
+                <option value="" data-i18n="contact.f_rubro_default">— Tu rubro —</option>
+                <option value="gastronomia" data-i18n="contact.f_rubro_1">Gastronomía / Cafetería</option>
+                <option value="estetica"    data-i18n="contact.f_rubro_2">Peluquería / Estética</option>
+                <option value="gimnasio"    data-i18n="contact.f_rubro_3">Gimnasio / Deporte</option>
+                <option value="retail"      data-i18n="contact.f_rubro_4">Comercio minorista</option>
+                <option value="servicios"   data-i18n="contact.f_rubro_5">Servicios</option>
+                <option value="otro"        data-i18n="contact.f_rubro_6">Otro</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="f-sucursales" data-i18n="contact.f_sucursales">Sucursales</label>
+              <select class="cf-input cf-select" id="f-sucursales" name="sucursales">
+                <option value=""    data-i18n="contact.f_suc_default">— Cantidad —</option>
+                <option value="1"   data-i18n="contact.f_suc_1">1 sucursal</option>
+                <option value="2-5" data-i18n="contact.f_suc_2">2 a 5 sucursales</option>
+                <option value="+5"  data-i18n="contact.f_suc_3">Más de 5 sucursales</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label class="cf-label" for="f-interest" data-i18n="contact.f_interest">¿En qué puedo ayudarte? *</label>
+              <select class="cf-input cf-select" id="f-interest" name="interest" required>
+                <option value="" data-i18n="contact.f_interest_default">— Seleccioná una opción —</option>
+                <option value="demo"    data-i18n="contact.f_opt1">Quiero ver una demo</option>
+                <option value="precios" data-i18n="contact.f_opt2">Consultar precios y planes</option>
+                <option value="soporte" data-i18n="contact.f_opt3">Ya soy cliente, necesito soporte</option>
+                <option value="otro"    data-i18n="contact.f_opt4">Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label class="cf-label" for="f-message" data-i18n="contact.f_message">Mensaje *</label>
+              <textarea class="cf-input cf-textarea" id="f-message" name="message" required minlength="10" rows="4"
+                data-i18n-placeholder="contact.f_message_ph" placeholder="Contanos sobre tu negocio y qué estás buscando…"></textarea>
+            </div>
+          </div>
+
+          <div class="cf-actions">
+            <button class="btn-primary cf-btn-submit" id="cf-submit" type="submit">
+              <span class="cf-btn-label" data-i18n="contact.f_submit">Enviar mensaje</span>
+              <span class="cf-btn-loading" hidden aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </button>
+            <p class="cf-legal">
+              <span data-i18n="contact.f_legal_pre">Al enviar aceptás nuestra</span>
+              <a href="/privacidad" target="_blank" data-i18n="contact.f_legal_link">política de privacidad</a>.
+            </p>
+          </div>
+
+          <p class="cf-error" id="cf-error" hidden data-i18n="contact.f_error">Hubo un problema al enviar. Por favor intentá de nuevo.</p>
+        </form>
+
+        <!-- Success state -->
+        <div class="cf-success" id="cf-success" hidden>
+          <div class="cf-success__icon">✓</div>
+          <p class="cf-success__msg" data-i18n="contact.success">¡Mensaje recibido! Te respondemos a la brevedad.</p>
+        </div>
+      </div>
+
+      <!-- WhatsApp como alternativa secundaria -->
+      <div class="contact__alt">
+        <span class="contact__alt-text" data-i18n="contact.whatsapp_alt">¿Preferís WhatsApp?</span>
+        <!-- ⚠️ CAMBIAR: reemplazá 5493XXXXXXXXX con el número real (código país sin +, sin espacios) -->
+        <a class="btn-wa btn-wa--sm" href="https://wa.me/5493XXXXXXXXX" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           <span data-i18n="contact.whatsapp_label">Escribir por WhatsApp</span>
         </a>
-        <a class="btn-ghost-white" href="mailto:hola@amomisclientes.com" data-i18n="contact.email_label">Enviar email</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -536,6 +647,7 @@
 <script src="js/chat-config.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/chat.js"></script>
+<script src="js/contact.js"></script>
 <script>amoI18n.init().then(function(){amoChat.init();}).catch(function(e){console.error(e);amoChat.init();});</script>
 </body>
 </html>
