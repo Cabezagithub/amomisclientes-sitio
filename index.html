@@ -465,7 +465,7 @@
 
       <!-- Formulario de contacto -->
       <div class="contact__form-wrap">
-        <form class="contact__form" id="contact-form" novalidate>
+        <form class="contact__form" id="contact-form" novalidate onsubmit="return false">
           <!-- Honeypot: campo invisible para filtrar bots -->
           <input type="text" name="extra" id="f-extra" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
 
@@ -647,7 +647,166 @@
 <script src="js/chat-config.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/chat.js"></script>
-<script src="js/contact.js"></script>
+<script>
+/* ===== FORMULARIO DE CONTACTO (inline: sin dependencia de archivo externo) ===== */
+(function () {
+  'use strict';
+
+  var RECAPTCHA_SITE_KEY = '';   // ← pegá la site key acá cuando configures reCAPTCHA; vacío = sin reCAPTCHA
+  var FORM_ENDPOINT      = 'contact.php';
+
+  var form      = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('cf-submit');
+  var errBox    = document.getElementById('cf-error');
+  var success   = document.getElementById('cf-success');
+
+  if (!form) { console.error('[AMC] No se encontró #contact-form'); return; }
+  console.log('[AMC] Formulario de contacto inicializado');
+
+  function setLoading(on) {
+    submitBtn.disabled = on;
+    var label   = submitBtn.querySelector('.cf-btn-label');
+    var spinner = submitBtn.querySelector('.cf-btn-loading');
+    if (label)   label.hidden   = on;
+    if (spinner) spinner.hidden = !on;
+  }
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function hideError() {
+    errBox.hidden = true;
+    errBox.textContent = '';
+  }
+
+  function val(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function validate() {
+    if (val('f-name').length < 2) {
+      document.getElementById('f-name').focus();
+      return 'Completá el campo Nombre (mínimo 2 caracteres).';
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('f-email'))) {
+      document.getElementById('f-email').focus();
+      return 'Ingresá un email válido.';
+    }
+    if (val('f-message').length < 10) {
+      document.getElementById('f-message').focus();
+      return 'El mensaje debe tener al menos 10 caracteres.';
+    }
+    return null;
+  }
+
+  function doSubmit(recaptchaToken) {
+    var lang = (window.amoI18n && window.amoI18n.getLocale) ? window.amoI18n.getLocale() : 'es';
+
+    var payload = {
+      name:            val('f-name'),
+      email:           val('f-email'),
+      company:         val('f-company'),
+      phone:           val('f-phone'),
+      country:         val('f-country'),
+      rubro:           val('f-rubro'),
+      sucursales:      val('f-sucursales'),
+      interest:        val('f-interest'),
+      message:         val('f-message'),
+      extra:           val('f-extra'),
+      recaptcha_token: recaptchaToken || '',
+      lang:            lang,
+      meta: {
+        referrer: document.referrer,
+        screen:   screen.width + 'x' + screen.height,
+        viewport: innerWidth + 'x' + innerHeight,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: navigator.language,
+        platform: navigator.platform,
+        touch:    ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'si' : 'no',
+      },
+    };
+
+    fetch(FORM_ENDPOINT, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+      .then(function (res) {
+        // Si el server devuelve algo que no es JSON (error PHP, 404, HTML de error),
+        // capturarlo y mostrarlo en lugar de fallar silenciosamente
+        return res.text().then(function (raw) {
+          var data;
+          try { data = JSON.parse(raw); }
+          catch (e) { data = { ok: false, error: 'bad_response', raw: raw.substring(0, 200) }; }
+          return { status: res.status, data: data };
+        });
+      })
+      .then(function (r) {
+        setLoading(false);
+        console.log('[AMC] Respuesta contact.php:', r.status, r.data);
+        if (r.data.ok) {
+          form.hidden    = true;
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (window.gtag) {
+            gtag('event', 'generate_lead', {
+              event_category: 'contacto',
+              interest: payload.interest,
+              rubro:    payload.rubro,
+              lang:     lang,
+            });
+          }
+        } else {
+          var errMsg;
+          switch (r.data.error) {
+            case 'validation':       errMsg = 'Revisá que los campos obligatorios estén completos.'; break;
+            case 'email_domain':     errMsg = 'El dominio del email no existe o no recibe correo. Verificá que esté bien escrito.'; break;
+            case 'recaptcha_failed': errMsg = 'La verificación de seguridad falló. Actualizá la página e intentá de nuevo.'; break;
+            case 'mail_failed':      errMsg = 'Error interno al enviar (' + (r.data.detail || 'SMTP') + '). Escribinos a hola@amomisclientes.com'; break;
+            case 'bad_response':     errMsg = 'El servidor respondió con un error (' + r.status + '). Detalle: ' + (r.data.raw || ''); break;
+            default:                 errMsg = 'Hubo un problema al enviar (' + (r.data.error || r.status) + '). Intentá de nuevo.';
+          }
+          showError(errMsg);
+        }
+      })
+      .catch(function (err) {
+        setLoading(false);
+        console.error('[AMC] Error de red:', err);
+        showError('Error de conexión con el servidor. Revisá tu internet e intentá de nuevo.');
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hideError();
+
+    var validationError = validate();
+    if (validationError) {
+      showError(validationError);
+      return;
+    }
+
+    setLoading(true);
+
+    if (RECAPTCHA_SITE_KEY && window.grecaptcha) {
+      window.grecaptcha.ready(function () {
+        window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
+          .then(doSubmit)
+          .catch(function (err) {
+            console.warn('[AMC] reCAPTCHA falló, enviando sin token:', err);
+            doSubmit('');
+          });
+      });
+    } else {
+      doSubmit('');
+    }
+  });
+})();
+</script>
 <script>amoI18n.init().then(function(){amoChat.init();}).catch(function(e){console.error(e);amoChat.init();});</script>
 </body>
 </html>
