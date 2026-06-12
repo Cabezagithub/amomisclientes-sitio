@@ -1,33 +1,30 @@
 /**
  * contact.js — Formulario de contacto AmoMisClientes
- * Pipeline: validación → reCAPTCHA v3 → fetch contact.php → GA4 → success
+ * Pipeline: validación → reCAPTCHA v3 (opcional) → fetch contact.php → GA4 → success
  *
- * Requiere:
- *   - reCAPTCHA v3 cargado en el head con la site key correcta
- *   - GA4 cargado en el head (window.gtag)
- *   - i18n.js inicializado antes (amoI18n.getLocale())
+ * ⚠️  Si usás reCAPTCHA: reemplazá RECAPTCHA_SITE_KEY con tu site key real.
+ *     Si la dejás vacía (''), el form funciona igual sin reCAPTCHA.
  */
 (function () {
   'use strict';
 
-  // ── Configuración ────────────────────────────────────────
-  // ⚠️ CAMBIAR: misma site key que pusiste en el <script> del head
-  var RECAPTCHA_SITE_KEY = 'YOUR_SITE_KEY';
+  var RECAPTCHA_SITE_KEY = '';   // ← pegá tu site key acá, o dejá vacío para arrancar sin reCAPTCHA
   var FORM_ENDPOINT      = 'contact.php';
 
-  // ── Referencias al DOM ───────────────────────────────────
   var form      = document.getElementById('contact-form');
   var submitBtn = document.getElementById('cf-submit');
   var errBox    = document.getElementById('cf-error');
   var success   = document.getElementById('cf-success');
 
-  if (!form) return; // si no hay form en la página, salir
+  if (!form) return;
 
-  // ── Helpers ──────────────────────────────────────────────
+  // ── UI helpers ───────────────────────────────────────────
   function setLoading(on) {
     submitBtn.disabled = on;
-    submitBtn.querySelector('.cf-btn-label').hidden = on;
-    submitBtn.querySelector('.cf-btn-loading').hidden = !on;
+    var label   = submitBtn.querySelector('.cf-btn-label');
+    var spinner = submitBtn.querySelector('.cf-btn-loading');
+    if (label)   label.hidden   = on;
+    if (spinner) spinner.hidden = !on;
   }
 
   function showError(msg) {
@@ -38,6 +35,7 @@
 
   function hideError() {
     errBox.hidden = true;
+    errBox.textContent = '';
   }
 
   function val(id) {
@@ -45,111 +43,121 @@
     return el ? el.value.trim() : '';
   }
 
-  // Validación mínima cliente-side (el server valida de nuevo)
+  // ── Validación cliente-side ───────────────────────────────
   function validate() {
     var name    = val('f-name');
     var email   = val('f-email');
     var message = val('f-message');
 
     if (name.length < 2) {
-      showError(null); // usa el texto del data-i18n ya aplicado
       document.getElementById('f-name').focus();
-      return false;
+      return 'Completá el campo Nombre (mínimo 2 caracteres).';
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       document.getElementById('f-email').focus();
-      return false;
+      return 'Ingresá un email válido.';
     }
     if (message.length < 10) {
       document.getElementById('f-message').focus();
-      return false;
+      return 'El mensaje debe tener al menos 10 caracteres.';
     }
-    return true;
+    return null; // ok
   }
 
-  // ── Submit ───────────────────────────────────────────────
+  // ── Envío al backend ─────────────────────────────────────
+  function doSubmit(recaptchaToken) {
+    var lang = (window.amoI18n && window.amoI18n.getLocale) ? window.amoI18n.getLocale() : 'es';
+
+    var payload = {
+      name:            val('f-name'),
+      email:           val('f-email'),
+      company:         val('f-company'),
+      phone:           val('f-phone'),
+      country:         val('f-country'),
+      rubro:           val('f-rubro'),
+      sucursales:      val('f-sucursales'),
+      interest:        val('f-interest'),
+      message:         val('f-message'),
+      extra:           document.getElementById('f-extra') ? document.getElementById('f-extra').value : '',
+      recaptcha_token: recaptchaToken || '',
+      lang:            lang,
+      meta: {
+        referrer: document.referrer,
+        screen:   screen.width + 'x' + screen.height,
+        viewport: innerWidth + 'x' + innerHeight,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: navigator.language,
+        platform: navigator.platform,
+        touch:    ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'si' : 'no',
+      },
+    };
+
+    fetch(FORM_ENDPOINT, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          return { status: res.status, data: data };
+        });
+      })
+      .then(function (r) {
+        setLoading(false);
+        if (r.data.ok) {
+          form.hidden    = true;
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // GA4: evento de conversión
+          if (window.gtag) {
+            gtag('event', 'generate_lead', {
+              event_category: 'contacto',
+              interest: payload.interest,
+              rubro:    payload.rubro,
+              lang:     lang,
+            });
+          }
+        } else {
+          var errMsg = 'Hubo un problema al enviar. Por favor intentá de nuevo.';
+          if (r.data.error === 'recaptcha_failed')  errMsg = 'La verificación de seguridad falló. Actualizá la página e intentá de nuevo.';
+          if (r.data.error === 'email_domain')      errMsg = 'El dominio del email no existe o no tiene registros de correo válidos.';
+          if (r.data.error === 'validation')        errMsg = 'Revisá que los campos obligatorios estén completos.';
+          if (r.data.error === 'mail_failed')       errMsg = 'Error interno al enviar el email. Por favor escribinos directamente a hola@amomisclientes.com';
+          showError(errMsg);
+        }
+      })
+      .catch(function (err) {
+        setLoading(false);
+        showError('Error de conexión. Revisá tu internet e intentá de nuevo.');
+        console.error('AMC contact error:', err);
+      });
+  }
+
+  // ── Submit handler ───────────────────────────────────────
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     hideError();
 
-    if (!validate()) {
-      showError();
+    var validationError = validate();
+    if (validationError) {
+      showError(validationError);
       return;
     }
 
     setLoading(true);
 
-    var lang = (window.amoI18n && window.amoI18n.getLocale) ? window.amoI18n.getLocale() : 'es';
-
-    var meta = {
-      referrer: document.referrer,
-      screen:   screen.width + 'x' + screen.height,
-      viewport: innerWidth + 'x' + innerHeight,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      language: navigator.language,
-      platform: navigator.platform,
-      touch:    ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'si' : 'no',
-    };
-
-    function doSubmit(recaptchaToken) {
-      var payload = {
-        name:            val('f-name'),
-        email:           val('f-email'),
-        company:         val('f-company'),
-        phone:           val('f-phone'),
-        country:         val('f-country'),
-        rubro:           val('f-rubro'),
-        sucursales:      val('f-sucursales'),
-        interest:        val('f-interest'),
-        message:         val('f-message'),
-        extra:           document.getElementById('f-extra') ? document.getElementById('f-extra').value : '',
-        recaptcha_token: recaptchaToken || '',
-        lang:            lang,
-        meta:            meta,
-      };
-
-      fetch(FORM_ENDPOINT, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
-      })
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          setLoading(false);
-          if (data.ok) {
-            // Ocultar form y mostrar success con scroll
-            form.hidden = true;
-            success.hidden = false;
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // GA4: evento de conversión
-            if (window.gtag) {
-              gtag('event', 'generate_lead', {
-                event_category: 'contacto',
-                interest:  payload.interest,
-                rubro:     payload.rubro,
-                lang:      lang,
-              });
-            }
-          } else {
-            showError();
-          }
-        })
-        .catch(function () {
-          setLoading(false);
-          showError();
-        });
-    }
-
-    // Ejecutar con reCAPTCHA si está disponible
-    if (window.grecaptcha && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'YOUR_SITE_KEY') {
+    // Con reCAPTCHA configurado
+    if (RECAPTCHA_SITE_KEY && window.grecaptcha) {
       window.grecaptcha.ready(function () {
         window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
           .then(doSubmit)
-          .catch(function () { doSubmit(''); });
+          .catch(function (err) {
+            console.warn('reCAPTCHA error, enviando sin token:', err);
+            doSubmit('');
+          });
       });
     } else {
-      // Sin reCAPTCHA: igualmente envía (el PHP acepta token vacío si no hay secret)
+      // Sin reCAPTCHA configurado: envía directo (el PHP acepta token vacío si no hay secret)
       doSubmit('');
     }
   });

@@ -63,14 +63,10 @@ if (!checkdnsrr($emailDomain, 'MX') && !checkdnsrr($emailDomain, 'A')) {
 }
 
 // ── reCAPTCHA v3 ──────────────────────────────────────────
-// Si hay secret configurado, el token es OBLIGATORIO (a diferencia de la
-// versión PBO original, donde un envío sin token salteaba la verificación).
-if (!empty($RECAPTCHA_SECRET)) {
-    if (empty($token)) {
-        http_response_code(403);
-        echo json_encode(['ok' => false, 'error' => 'recaptcha_required']);
-        exit;
-    }
+// Solo verifica si hay secret configurado Y el token llegó.
+// Si el token está vacío (reCAPTCHA no configurado en el front), deja pasar
+// y loguea para que puedas detectar envíos sin verificar.
+if (!empty($RECAPTCHA_SECRET) && !empty($token)) {
     $rc     = file_get_contents('https://www.google.com/recaptcha/api/siteverify?' . http_build_query(['secret' => $RECAPTCHA_SECRET, 'response' => $token]));
     $rcData = $rc ? json_decode($rc, true) : [];
     if (!($rcData['success'] ?? false) || ($rcData['score'] ?? 0) < $RECAPTCHA_MIN_SCORE) {
@@ -78,6 +74,9 @@ if (!empty($RECAPTCHA_SECRET)) {
         echo json_encode(['ok' => false, 'error' => 'recaptcha_failed', 'score' => $rcData['score'] ?? 0]);
         exit;
     }
+} elseif (!empty($RECAPTCHA_SECRET) && empty($token)) {
+    // Secret configurado pero sin token: loguear y dejar pasar
+    error_log('AMC contact warning: token reCAPTCHA vacío, se procesó igual');
 }
 
 // ── ID de referencia: aaaammddhhmmss + 4 dígitos random ──
