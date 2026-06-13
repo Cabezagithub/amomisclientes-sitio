@@ -441,6 +441,11 @@ button{font-family:inherit}
  
 
 /* ===== FORMULARIO DE CONTACTO ===== */
+/* reCAPTCHA badge: mover a la izquierda para no pisar el chat */
+.grecaptcha-badge {
+  left: 4px !important;
+  right: auto !important;
+}
 .contact__form-wrap {
   max-width: 680px;
   margin: 0 auto 32px;
