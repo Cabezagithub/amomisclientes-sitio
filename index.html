@@ -384,15 +384,17 @@
 <!-- PRECIOS -->
 <section class="pricing" id="precios">
   <div class="container">
-    <div class="eyebrow" style="display:block;text-align:center">Transparente</div>
+    <div class="eyebrow" style="display:block;text-align:center" data-i18n="pricing.eyebrow">Transparente</div>
     <h2 class="section-h section-h--center" data-i18n="pricing.title">Planes simples y transparentes</h2>
     <p class="section-sub section-sub--center" data-i18n="pricing.sub">Sin cargos ocultos. Sin permanencia. Cancelás cuando querés.</p>
     <div class="pricing__grid">
+
+      <!-- BASE -->
       <div class="plan">
         <div class="plan__name" data-i18n="pricing.base_name">Base</div>
         <div class="plan__price">
           <span class="plan__cur" data-i18n="pricing.currency">USD</span>
-          <span class="plan__amt" data-i18n="pricing.base_price">24.90</span>
+          <span class="plan__amt" data-i18n="pricing.base_price">17.90</span>
           <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
         </div>
         <p class="plan__desc" data-i18n="pricing.base_desc">Para negocios que arrancan con fidelización simple.</p>
@@ -404,29 +406,49 @@
           <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f5">Reportes básicos</span></li>
           <li><span class="checkmark">✓</span><span data-i18n="pricing.base_f6">Soporte estándar</span></li>
         </ul>
-        <a class="btn-outline" href="#contacto" data-i18n="pricing.base_cta">Empezar con Base</a>
+        <a class="btn-outline btn--full" href="#contacto" data-i18n="pricing.base_cta">Empezar con Base</a>
       </div>
+
+      <!-- ESTÁNDAR (destacado) -->
       <div class="plan plan--featured">
         <div class="plan__badge" data-i18n="pricing.popular_badge">Más popular</div>
+        <div class="plan__name" data-i18n="pricing.std_name">Estándar</div>
+        <div class="plan__price">
+          <span class="plan__cur" data-i18n="pricing.currency">USD</span>
+          <span class="plan__amt" data-i18n="pricing.std_price">25.90</span>
+          <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
+        </div>
+        <p class="plan__desc" data-i18n="pricing.std_desc">Para negocios en crecimiento que quieren más herramientas.</p>
+        <ul class="plan__list">
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f1">Hasta 5 sucursales</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f2">Sellos y puntos simultáneos</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f3">Hasta 10 usuarios del panel</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f4">Hasta 30 campañas por mes</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f5">Automatizaciones</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f6">Reportes avanzados</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.std_f7">Soporte prioritario</span></li>
+        </ul>
+        <a class="btn-primary btn--full" href="#contacto" data-i18n="pricing.std_cta">Empezar con Estándar</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan">
         <div class="plan__name" data-i18n="pricing.pro_name">Pro</div>
         <div class="plan__price">
           <span class="plan__cur" data-i18n="pricing.currency">USD</span>
-          <span class="plan__amt" data-i18n="pricing.pro_price">39.90</span>
+          <span class="plan__amt" data-i18n="pricing.pro_price">27.90</span>
           <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
         </div>
-        <p class="plan__desc" data-i18n="pricing.pro_desc">Para negocios en crecimiento que quieren más herramientas.</p>
+        <p class="plan__desc" data-i18n="pricing.pro_desc">Para negocios que quieren integrar con su sistema.</p>
         <ul class="plan__list">
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f1">Hasta 5 sucursales</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f2">Sellos y puntos simultáneos</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f3">Hasta 10 usuarios del panel</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f4">Hasta 30 campañas por mes</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f5">Automatizaciones</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f6">Reportes avanzados</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f7">API / Webhook</span></li>
-          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f8">Soporte prioritario</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f1">Todo lo del Estándar</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f2">API / Webhook de integración</span></li>
+          <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f3">Conexión con POS, ERP o CRM</span></li>
         </ul>
-        <a class="btn-primary btn-primary btn--full" style="width:100%;justify-content:center;display:flex" href="#contacto" data-i18n="pricing.pro_cta">Empezar con Pro</a>
+        <p class="plan__nudge" data-i18n="pricing.pro_nudge">Solo USD 2 más que el Estándar</p>
+        <a class="btn-outline btn--full" href="#contacto" data-i18n="pricing.pro_cta">Empezar con Pro</a>
       </div>
+
     </div>
     <div class="pricing__note">
       <p data-i18n="pricing.payment_text">Tarjeta de crédito o débito vía Stripe. En Argentina también por Mercado Pago.</p>
@@ -444,7 +466,7 @@
       <details class="faq__item"><summary data-i18n="faq.q1">¿Mis clientes tienen que descargar una app?</summary><p data-i18n="faq.a1">No. AmoMisClientes usa tecnología PWA: tus clientes instalan la app directamente desde el navegador en 2 clics, sin App Store ni Play Store.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q2">¿La app tiene mi logo y mis colores?</summary><p data-i18n="faq.a2">Sí. Configurás tu identidad visual completa: logo, ícono que aparece en el celular, colores de la app. Tus clientes ven tu marca, no la nuestra.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q3">¿Necesito hardware especial o una tablet en caja?</summary><p data-i18n="faq.a3">No. Generás el QR desde tu propio celular o el de tu empleado. Sin inversión en hardware adicional.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal y el Pro hasta 5. Cada sucursal tiene dirección y geolocalización en el mapa.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal, el Estándar y Pro hasta 5. Cada sucursal tiene dirección y geolocalización en el mapa.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q5">¿Cómo se paga?</summary><p data-i18n="faq.a5">Por Stripe con tarjeta de crédito o débito. En Argentina también por Mercado Pago. Pago mensual, sin permanencia.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q6">¿Puedo cancelar cuando quiero?</summary><p data-i18n="faq.a6">Sí. Cancelás cuando quieras desde tu panel. El servicio sigue activo hasta el fin del período pago.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q7">¿Qué pasa con mis datos si cancelo?</summary><p data-i18n="faq.a7">Tus datos y los de tus clientes se conservan 90 días. Nunca compartimos ni usamos datos de negocios o clientes con terceros.</p></details>
@@ -607,7 +629,7 @@
       </div>
       <div class="footer__col">
         <div class="footer__col-title" data-i18n="footer.contact_title">Contacto</div>
-        <a href="mailto:contacto@amomisclientes.com">contacto@amomisclientes.com</a>
+        <a href="mailto:hola@amomisclientes.com">hola@amomisclientes.com</a>
         <div class="footer__langs"><a href="?lang=es">ES</a> · <a href="?lang=pt">PT</a> · <a href="?lang=en">EN</a></div>
       </div>
     </div>
