@@ -122,7 +122,7 @@
           if (r.data.error === 'recaptcha_failed')  errMsg = 'La verificación de seguridad falló. Actualizá la página e intentá de nuevo.';
           if (r.data.error === 'email_domain')      errMsg = 'El dominio del email no existe o no tiene registros de correo válidos.';
           if (r.data.error === 'validation')        errMsg = 'Revisá que los campos obligatorios estén completos.';
-          if (r.data.error === 'mail_failed')       errMsg = 'Error interno al enviar el email. Por favor escribinos directamente a hola@amomisclientes.com';
+          if (r.data.error === 'mail_failed')       errMsg = 'Error interno al enviar el email. Por favor escribinos directamente a contacto@amomisclientes.com';
           showError(errMsg);
         }
       })
