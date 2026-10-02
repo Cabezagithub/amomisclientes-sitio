@@ -76,35 +76,22 @@
         <p class="hero__note" data-i18n="hero.badge">Sin permanencia · Cancelás cuando querés</p>
       </div>
       <div class="hero__visual">
-        <div class="phone">
-          <!-- 🐕 CAMBIAR: screenshot real PWA del negocio demo -->
-          <div class="phone__screen">
-            <img class="phone__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=512&q=80" alt="Demo app"/>
-            <div class="phone__body">
-              <div class="phone__header">
-                <div class="phone__app-icon">🏪</div>
-                <div>
-                  <div class="phone__app-name">Tu Negocio</div>
-                  <div class="phone__app-sub">Programa de fidelización</div>
-                </div>
-              </div>
-              <div class="phone__card">
-                <div class="phone__card-lbl">Sellos acumulados</div>
-                <div class="phone__stamps">
-                  <span class="s on">☕</span><span class="s on">☕</span><span class="s on">☕</span><span class="s on">☕</span>
-                  <span class="s on">☕</span><span class="s">☕</span><span class="s">☕</span><span class="s prize">🎁</span>
-                </div>
-                <div class="phone__progress">5 de 8 · ¡Falta poco para tu café gratis!</div>
-              </div>
-              <div class="phone__notif"><span>🔔</span><span>¡2×1 en cafés hoy hasta las 18hs!</span></div>
-            </div>
-          </div>
-          <div class="phone__homerow">
-            <div class="app-icon app-icon--brand">🏪</div>
-            <div class="app-icon app-icon--gray">📷</div>
-            <div class="app-icon app-icon--gray">🎵</div>
-            <div class="app-icon app-icon--gray">📱</div>
-          </div>
+        <div class="samsung-mockup">
+          <svg class="samsung-frame" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="screen-clip">
+                <rect x="12" y="12" width="366" height="820" rx="38" ry="38"/>
+              </clipPath>
+            </defs>
+            <rect x="2" y="2" width="386" height="840" rx="46" ry="46" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="3"/>
+            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="#000"/>
+            <circle cx="195" cy="30" r="6" fill="#111"/>
+            <rect x="385" y="180" width="5" height="60" rx="2" fill="#2a2a2a"/>
+            <rect x="0" y="160" width="5" height="40" rx="2" fill="#2a2a2a"/>
+            <rect x="0" y="210" width="5" height="40" rx="2" fill="#2a2a2a"/>
+            <image href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#screen-clip)" preserveAspectRatio="xMidYMin slice"/>
+            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
+          </svg>
           <div class="phone__label">Tu ícono · Tu marca · Su celular</div>
         </div>
       </div>
@@ -360,32 +347,6 @@
   </div>
 </section>
 
-<!-- DEMO -->
-<section class="demo" id="demo">
-  <div class="container">
-    <div class="demo__inner">
-      <div>
-        <div class="eyebrow">Sin riesgo</div>
-        <h2 class="section-h" style="color:#fff" data-i18n="demo.title">Probalo antes de pagar</h2>
-        <p class="demo__sub" data-i18n="demo.sub">Accedé al panel de demo e instalá la PWA en tu celular. Viví la experiencia completa como si fuera tu negocio.</p>
-        <div class="demo__ctas">
-          <a class="demo__btn-white" href="#" data-i18n="demo.cta">Ver demo ahora →</a>
-        </div>
-        <div class="demo__chips">
-          <span class="chip">📱 <span data-i18n="demo.pwa_label">Instalá la app en tu celular</span></span>
-          <span class="chip">🖥️ <span data-i18n="demo.panel_label">Explorá el panel admin</span></span>
-        </div>
-      </div>
-      <div class="demo__visual">
-        <!-- 🐾 CAMBIAR → screenshot real del panel de administración -->
-        <div class="demo__img-wrap">
-          <img class="demo__img" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80" alt="Panel demo"/>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PRECIOS -->
 <section class="pricing" id="precios">
   <div class="container">
@@ -508,7 +469,6 @@
         <div class="footer__col-title" data-i18n="footer.links_title">Producto</div>
         <a href="#como-funciona" data-i18n="footer.link_features">Cómo funciona</a>
         <a href="#precios" data-i18n="footer.link_pricing">Planes</a>
-        <a href="#demo" data-i18n="footer.link_demo">Demo</a>
         <a href="#faq" data-i18n="footer.link_faq">Preguntas frecuentes</a>
       </div>
       <div class="footer__col">
