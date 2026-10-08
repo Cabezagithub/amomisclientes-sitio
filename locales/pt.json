@@ -63,7 +63,7 @@
     "f6Text": "Você administra tudo pelo seu telefone. Estatísticas, QR, notificações.",
     "f7Title": "Multiidioma",
     "f7Text": "Espanhol, inglês e português. Ideal para regiões turísticas e internacionais.",
-    "f8Title": "API para o seu sistema",
+    "f8Title": "API de integração com sistemas",
     "f8Text": "Conecte com seu PDV ou ERP. Os pontos são somados automaticamente."
   },
   "usecases": {
