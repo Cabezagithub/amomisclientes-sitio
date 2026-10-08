@@ -3,8 +3,31 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="description" content="Sistema de fidelización SaaS para negocios. Tu app con tu marca en el celular de tus clientes."/>
-  <title>AmoMisClientes — Fidelización digital para tu negocio</title>
+  <meta name="description" content="Sistema SaaS de fidelización para negocios. Tu app con tu marca en el celular de tus clientes. Sellos, puntos y premios que hacen volver."/>
+  <title>AmoMisClientes — Programa de fidelización para cafeterías, comercios y bares</title>
+  <!-- SEO: idiomas y vista previa al compartir -->
+  <link rel="alternate" hreflang="es" href="https://amomisclientes.com/?lang=es"/>
+  <link rel="alternate" hreflang="pt" href="https://amomisclientes.com/?lang=pt"/>
+  <link rel="alternate" hreflang="en" href="https://amomisclientes.com/?lang=en"/>
+  <link rel="alternate" hreflang="x-default" href="https://amomisclientes.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="AmoMisClientes"/>
+  <meta property="og:url" content="https://amomisclientes.com/"/>
+  <meta property="og:title" content="AmoMisClientes — Programa de fidelización para cafeterías, comercios y bares"/>
+  <meta property="og:description" content="Sistema SaaS de fidelización para negocios. Tu app con tu marca en el celular de tus clientes. Sellos, puntos y premios que hacen volver."/>
+  <meta property="og:image" content="https://amomisclientes.com/img/og-amomisclientes.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="es_LA"/>
+  <meta property="og:locale:alternate" content="pt_BR"/>
+  <meta property="og:locale:alternate" content="en_US"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="AmoMisClientes — Programa de fidelización para cafeterías, comercios y bares"/>
+  <meta name="twitter:description" content="Sistema SaaS de fidelización para negocios. Tu app con tu marca en el celular de tus clientes. Sellos, puntos y premios que hacen volver."/>
+  <meta name="twitter:image" content="https://amomisclientes.com/img/og-amomisclientes.jpg"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"AmoMisClientes","url":"https://amomisclientes.com/","logo":"https://amomisclientes.com/img/logo_3_transparente.png","parentOrganization":{"@type":"Organization","name":"Pro Business One"},"contactPoint":{"@type":"ContactPoint","email":"contacto@amomisclientes.com","contactType":"sales","availableLanguage":["es","pt","en"]}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -40,6 +63,9 @@
       <a href="#faq" data-i18n="nav.faq">Preguntas</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
     </nav>
+    <div class="nav__lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">ES</button><button type="button" data-lang="pt">PT</button><button type="button" data-lang="en">EN</button>
+    </div>
     <div class="nav__actions">
       <a class="btn-secondary" href="#contacto" data-i18n="nav.contact">Contacto</a>
       <a class="btn-primary" href="#precios" data-i18n="hero.ctaPrimary">Ver planes</a>
@@ -49,6 +75,9 @@
     </button>
   </div>
   <div class="nav__mobile" id="nav-mobile" hidden>
+    <div class="nav__lang nav__lang--mobile" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">ES</button><button type="button" data-lang="pt">PT</button><button type="button" data-lang="en">EN</button>
+    </div>
     <a href="#como-funciona" data-i18n="nav.features">Cómo funciona</a>
     <a href="#precios" data-i18n="nav.pricing">Planes</a>
     <a href="#faq" data-i18n="nav.faq">Preguntas</a>
@@ -154,7 +183,6 @@
     <h2 class="section-h" style="color:#fff" data-i18n="how.title">Cómo funciona en 3 pasos</h2>
     <div class="how__grid">
       <div class="how__step">
-        <!-- 🦊 CAMBIAR → screenshot real panel de configuración -->
         <img class="how__step-img" src="/imagenes/carton_configuracion.jpg" data-lightbox alt="Panel de configuración AmoMisClientes"/>
         <div class="how__step-body">
           <div class="how__step-num">1</div>
@@ -163,7 +191,6 @@
         </div>
       </div>
       <div class="how__step">
-        <!-- 🐼 CAMBIAR → foto empleado mostrando QR en caja -->
         <img class="how__step-img" src="/imagenes/sello_escanear.jpg" data-lightbox alt="QR para registrar sello"/>
         <div class="how__step-body">
           <div class="how__step-num">2</div>
@@ -172,7 +199,6 @@
         </div>
       </div>
       <div class="how__step">
-        <!-- 🦁 CAMBIAR → cliente mirando celular con sellos completos -->
         <img class="how__step-img" src="/imagenes/carton_en_movil.jpg" data-lightbox alt="Cliente con cartón de sellos en su celular"/>
         <div class="how__step-body">
           <div class="how__step-num">3</div>
@@ -282,22 +308,18 @@
     <h2 class="section-h" data-i18n="usecases.title">Funciona para tu tipo de negocio</h2>
     <div class="usecases__grid">
       <div class="usecase">
-        <!-- ☕ CAMBIAR → foto real de cafetería -->
         <img class="usecase__img" src="/imagenes/cafeteria.jpg" alt="Cafeterías"/>
         <div class="usecase__overlay"><div class="usecase__ico">☕</div><h3 data-i18n="usecases.cafe_title">Cafeterías</h3><p data-i18n="usecases.cafe_text">Cartón digital de sellos. El 8vo café es gratis. Tus clientes vuelven a completarlo.</p></div>
       </div>
       <div class="usecase">
-        <!-- 🔧 CAMBIAR → foto real de ferretería o retail -->
         <img class="usecase__img" src="/imagenes/ferreteria.jpg" alt="Ferreterías y retail"/>
         <div class="usecase__overlay"><div class="usecase__ico">🔧</div><h3 data-i18n="usecases.retail_title">Ferreterías y retail</h3><p data-i18n="usecases.retail_text">Puntos por compra canjeables por descuentos o productos.</p></div>
       </div>
       <div class="usecase">
-        <!-- 🍺 CAMBIAR → foto real de bar -->
         <img class="usecase__img" src="/imagenes/pizzeria.jpg" alt="Bares y gastronomía"/>
         <div class="usecase__overlay"><div class="usecase__ico">🍺</div><h3 data-i18n="usecases.bar_title">Bares y gastronomía</h3><p data-i18n="usecases.bar_text">Sellos y puntos combinados. Doble herramienta para fidelizar.</p></div>
       </div>
       <div class="usecase">
-        <!-- ✨ CAMBIAR → foto de negocio comercial variado -->
         <img class="usecase__img" src="/imagenes/estacion_de_carga.jpg" alt="Estación de carga de vehículos eléctricos"/>
         <div class="usecase__overlay"><div class="usecase__ico">✨</div><h3 data-i18n="usecases.other_title">Y muchos más</h3><p data-i18n="usecases.other_text">Peluquerías · Gimnasios · Veterinarias · Lavaderos · Estaciones de servicio · Supermercados</p></div>
       </div>
@@ -386,7 +408,7 @@
       <details class="faq__item"><summary data-i18n="faq.q1">¿Mis clientes tienen que descargar una app?</summary><p data-i18n="faq.a1">No. AmoMisClientes usa tecnología PWA: tus clientes instalan la app directamente desde el navegador en 2 clics, sin App Store ni Play Store.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q2">¿La app tiene mi logo y mis colores?</summary><p data-i18n="faq.a2">Sí. Configurás tu identidad visual completa: logo, ícono que aparece en el celular, colores de la app. Tus clientes ven tu marca, no la nuestra.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q3">¿Necesito hardware especial o una tablet en caja?</summary><p data-i18n="faq.a3">No. Generás el QR desde tu propio celular o el de tu empleado. Sin inversión en hardware adicional.</p></details>
-      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal, el Estándar hasta 5 y el Pro también hasta 5 con integración API. Cada sucursal tiene dirección y geolocalización en el mapa.</p></details>
+      <details class="faq__item"><summary data-i18n="faq.q4">¿Puedo manejar varias sucursales?</summary><p data-i18n="faq.a4">Sí. El plan Base incluye 1 sucursal, el Estándar y Pro hasta 5. Cada sucursal tiene dirección y geolocalización en el mapa. Si tenés más de 5 sucursales, escribinos y armamos un plan a medida.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q5">¿Cómo se paga?</summary><p data-i18n="faq.a5">Por Stripe con tarjeta de crédito o débito. En Argentina también por Mercado Pago. Pago mensual, sin permanencia.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q6">¿Puedo cancelar cuando quiero?</summary><p data-i18n="faq.a6">Sí. Cancelás cuando quieras desde tu panel. El servicio sigue activo hasta el fin del período pago.</p></details>
       <details class="faq__item"><summary data-i18n="faq.q7">¿Qué pasa con mis datos si cancelo?</summary><p data-i18n="faq.a7">Tus datos y los de tus clientes se conservan 90 días. Nunca compartimos ni usamos datos de negocios o clientes con terceros.</p></details>

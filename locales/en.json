@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "AmoMisClientes — Digital loyalty for your business",
+    "title": "AmoMisClientes — Loyalty program for cafés, shops and bars",
     "description": "SaaS loyalty system for businesses. Your branded app on your customers' phones. Stamps, points and rewards that bring them back."
   },
   "nav": {
@@ -155,7 +155,7 @@
     "q3": "Do I need special hardware or a tablet at the register?",
     "a3": "No. You generate the QR from your own phone or your employee's. No extra hardware investment.",
     "q4": "Can I manage multiple locations?",
-    "a4": "Yes. The Base plan includes 1 location, Standard and Pro up to 5. Each location has its own address and map pin.",
+    "a4": "Yes. The Base plan includes 1 location, Standard and Pro up to 5. Each location has its own address and map pin. If you have more than 5 locations, get in touch and we'll build a custom plan.",
     "q5": "How does payment work?",
     "a5": "Via Stripe with credit or debit card. Monthly billing, no commitment.",
     "q6": "Can I cancel anytime?",

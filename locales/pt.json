@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "AmoMisClientes — Fidelização digital para o seu negócio",
+    "title": "AmoMisClientes — Programa de fidelização para cafeterias, comércios e bares",
     "description": "Sistema SaaS de fidelização para negócios. Seu app com sua marca no celular dos seus clientes. Carimbos, pontos e prêmios que fazem voltar."
   },
   "nav": {
@@ -134,7 +134,7 @@
     "q3": "Preciso de hardware especial ou tablet no caixa?",
     "a3": "Não. Você gera o QR do seu próprio celular ou do seu funcionário. Sem investimento em hardware.",
     "q4": "Posso gerenciar várias unidades?",
-    "a4": "Sim. O plano Base inclui 1 unidade, o Padrão e Pro até 5. Cada unidade tem endereço e geolocalização no mapa.",
+    "a4": "Sim. O plano Base inclui 1 unidade, o Padrão e Pro até 5. Cada unidade tem endereço e geolocalização no mapa. Se você tem mais de 5 unidades, fale com a gente e montamos um plano sob medida.",
     "q5": "Como é o pagamento?",
     "a5": "Via Stripe com cartão de crédito ou débito. Pagamento mensal, sem fidelidade.",
     "q6": "Posso cancelar quando quiser?",

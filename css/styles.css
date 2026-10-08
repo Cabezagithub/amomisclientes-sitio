@@ -605,3 +605,14 @@ button{font-family:inherit}
   .feat-item__text{max-height:none!important;opacity:1!important;margin-top:6px!important}
   
 }
+
+/* ── SELECTOR DE IDIOMA (header) ───────────────────────── */
+.nav__lang{display:flex;gap:2px;margin-right:16px;background:var(--gray-100);border-radius:999px;padding:3px}
+.nav__lang button{background:none;border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--gray-600);padding:5px 10px;border-radius:999px;transition:all .15s}
+.nav__lang button:hover{color:var(--orange)}
+.nav__lang button.is-active{background:var(--orange);color:#fff}
+.nav__lang--mobile{display:none}
+@media(max-width:768px){
+  .nav__lang{display:none}
+  .nav__lang--mobile{display:flex;align-self:flex-start;margin:12px 24px 4px}
+}
