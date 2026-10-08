@@ -287,18 +287,18 @@
         <div class="usecase__overlay"><div class="usecase__ico">☕</div><h3 data-i18n="usecases.cafe_title">Cafeterías</h3><p data-i18n="usecases.cafe_text">Cartón digital de sellos. El 8vo café es gratis. Tus clientes vuelven a completarlo.</p></div>
       </div>
       <div class="usecase">
+        <!-- 🔧 CAMBIAR → foto real de ferretería o retail -->
+        <img class="usecase__img" src="/imagenes/ferreteria.jpg" alt="Ferreterías y retail"/>
+        <div class="usecase__overlay"><div class="usecase__ico">🔧</div><h3 data-i18n="usecases.retail_title">Ferreterías y retail</h3><p data-i18n="usecases.retail_text">Puntos por compra canjeables por descuentos o productos.</p></div>
+      </div>
+      <div class="usecase">
         <!-- 🍺 CAMBIAR → foto real de bar -->
         <img class="usecase__img" src="/imagenes/pizzeria.jpg" alt="Bares y gastronomía"/>
         <div class="usecase__overlay"><div class="usecase__ico">🍺</div><h3 data-i18n="usecases.bar_title">Bares y gastronomía</h3><p data-i18n="usecases.bar_text">Sellos y puntos combinados. Doble herramienta para fidelizar.</p></div>
       </div>
       <div class="usecase">
-        <!-- 🔧 CAMBIAR → foto real de ferretería o retail -->
-        <img class="usecase__img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&q=80" alt="Retail"/>
-        <div class="usecase__overlay"><div class="usecase__ico">🔧</div><h3 data-i18n="usecases.retail_title">Ferreterías y retail</h3><p data-i18n="usecases.retail_text">Puntos por compra canjeables por descuentos o productos.</p></div>
-      </div>
-      <div class="usecase">
         <!-- ✨ CAMBIAR → foto de negocio comercial variado -->
-        <img class="usecase__img" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&q=80" alt="Más negocios"/>
+        <img class="usecase__img" src="/imagenes/estacion_de_carga.jpg" alt="Estación de carga de vehículos eléctricos"/>
         <div class="usecase__overlay"><div class="usecase__ico">✨</div><h3 data-i18n="usecases.other_title">Y muchos más</h3><p data-i18n="usecases.other_text">Peluquerías · Gimnasios · Veterinarias · Lavaderos · Estaciones de servicio · Supermercados</p></div>
       </div>
     </div>
@@ -318,7 +318,7 @@
         <div class="plan__name" data-i18n="pricing.base_name">Base</div>
         <div class="plan__price">
           <span class="plan__cur" data-i18n="pricing.currency">USD</span>
-          <span class="plan__amt" data-i18n="pricing.base_price">17.90</span>
+          <span class="plan__amt" data-i18n="pricing.base_price">14.90</span>
           <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
         </div>
         <p class="plan__desc" data-i18n="pricing.base_desc">Para negocios que arrancan con fidelización simple.</p>
@@ -338,7 +338,7 @@
         <div class="plan__name" data-i18n="pricing.std_name">Estándar</div>
         <div class="plan__price">
           <span class="plan__cur" data-i18n="pricing.currency">USD</span>
-          <span class="plan__amt" data-i18n="pricing.std_price">25.90</span>
+          <span class="plan__amt" data-i18n="pricing.std_price">19.90</span>
           <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
         </div>
         <p class="plan__desc" data-i18n="pricing.std_desc">Para negocios en crecimiento que quieren más herramientas.</p>
@@ -358,7 +358,7 @@
         <div class="plan__name" data-i18n="pricing.pro_name">Pro</div>
         <div class="plan__price">
           <span class="plan__cur" data-i18n="pricing.currency">USD</span>
-          <span class="plan__amt" data-i18n="pricing.pro_price">27.90</span>
+          <span class="plan__amt" data-i18n="pricing.pro_price">22.90</span>
           <span class="plan__per">/<span data-i18n="pricing.monthly">mes</span></span>
         </div>
         <p class="plan__desc" data-i18n="pricing.pro_desc">Para negocios que quieren integrar con su sistema.</p>
@@ -366,7 +366,7 @@
           <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f1">Todo lo del Estándar</span></li>
           <li><span class="checkmark">✓</span><span data-i18n="pricing.pro_f2">API / Webhook para integración con POS o ERP</span></li>
         </ul>
-        <p class="plan__nudge" data-i18n="pricing.pro_nudge" style="font-size:13px;color:var(--orange);font-weight:600;margin-bottom:16px">Solo USD 2 más que el Estándar</p>
+        <p class="plan__nudge" data-i18n="pricing.pro_nudge" style="font-size:13px;color:var(--orange);font-weight:600;margin-bottom:16px">Solo USD 3 más que el Estándar</p>
         <a class="btn-outline" href="#contacto" data-i18n="pricing.pro_cta">Empezar con Pro</a>
       </div>
     </div>
@@ -487,10 +487,10 @@
     "/imagenes/feat_sellos.jpg",          // 🎫 Sellos digitales
     "/imagenes/puntos.jpg",               // ⭐ Puntos y premios
     "/imagenes/feat_notificaciones.jpg",  // 🔔 Notificaciones push
-    "/imagenes/puntos.jpg",               // 📲 QR desde tu celular
+    "/imagenes/feat_qr.jpg",              // 📲 QR desde tu celular
     "/imagenes/feat_mapa.jpg",            // 📍 Mapa de sucursales
     "/imagenes/feat_panel.jpg",           // 📊 Panel desde el celular
-    "/imagenes/puntos.jpg",               // 🌍 Multiidioma
+    "/imagenes/feat_idioma.jpg",          // 🌍 Multiidioma
     "/imagenes/feat_api.jpg"              // 🔌 API de integración
   ];
   var items=document.querySelectorAll(".feat-item");
