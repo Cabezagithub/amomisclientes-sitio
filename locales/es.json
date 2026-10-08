@@ -13,9 +13,14 @@
   "hero": {
     "headline": "Tu negocio en el celular de tus clientes",
     "sub": "Con tu ícono. Con tus colores. Con tu marca. Sin App Store, sin Play Store. Sellos, puntos y premios que hacen volver.",
-    "ctaPrimary": "Ver demo gratis",
+    "ctaPrimary": "Ver planes",
     "ctaSecondary": "Hablar con ventas",
-    "badge": "Sin permanencia · Cancelás cuando querés"
+    "badge": "Sin permanencia · Cancelás cuando querés",
+    "eyebrow": "🏆 Sistema de fidelización SaaS para negocios",
+    "h1a": "Tu negocio en el",
+    "h1b": "celular de tus",
+    "h1c": "clientes",
+    "phoneLabel": "Tu ícono · Tu marca · Su celular"
   },
   "features": {
     "title": "Todo lo que necesitás para fidelizar",
@@ -161,5 +166,14 @@
     "a8": "Sí. El plan Pro incluye API/Webhook básico para conectar con tu POS o ERP y sumar puntos automáticamente.",
     "q9": "¿Funciona para negocios con clientes que hablan otro idioma?",
     "a9": "Sí. La app del cliente es multiidioma: español, inglés y portugués. Ideal para zonas turísticas."
+  },
+  "eyebrow": {
+    "diff": "El diferencial",
+    "how": "Simple y rápido",
+    "features": "Funcionalidades",
+    "usecases": "Para tu negocio",
+    "pricing": "Transparente",
+    "faq": "Dudas",
+    "contact": "¿Hablamos?"
   }
 }

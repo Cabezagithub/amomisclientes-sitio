@@ -13,9 +13,14 @@
   "hero": {
     "headline": "Your business on your customers' phones",
     "sub": "Your icon. Your colors. Your brand. No App Store, no Play Store. Stamps, points and rewards that bring them back.",
-    "ctaPrimary": "See free demo",
+    "ctaPrimary": "See plans",
     "ctaSecondary": "Talk to sales",
-    "badge": "No commitment · Cancel anytime"
+    "badge": "No commitment · Cancel anytime",
+    "eyebrow": "🏆 SaaS loyalty system for businesses",
+    "h1a": "Your business on",
+    "h1b": "your customers'",
+    "h1c": "phones",
+    "phoneLabel": "Your icon · Your brand · Their phone"
   },
   "features": {
     "title": "Everything you need to build loyalty",
@@ -161,5 +166,14 @@
     "a8": "Yes. The Pro plan includes a basic API/Webhook to connect with your POS or ERP and add points automatically.",
     "q9": "Does it work for businesses with customers who speak another language?",
     "a9": "Yes. The customer app supports multiple languages: Spanish, English and Portuguese. Ideal for tourist areas."
+  },
+  "eyebrow": {
+    "diff": "What sets us apart",
+    "how": "Simple and fast",
+    "features": "Features",
+    "usecases": "For your business",
+    "pricing": "Transparent",
+    "faq": "Questions",
+    "contact": "Shall we talk?"
   }
 }

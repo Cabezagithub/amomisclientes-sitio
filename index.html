@@ -42,7 +42,7 @@
     </nav>
     <div class="nav__actions">
       <a class="btn-secondary" href="#contacto" data-i18n="nav.contact">Contacto</a>
-      <a class="btn-primary" href="#precios" data-i18n="hero.ctaPrimary">Empezar</a>
+      <a class="btn-primary" href="#precios" data-i18n="hero.ctaPrimary">Ver planes</a>
     </div>
     <button class="nav__burger" id="nav-burger" aria-expanded="false" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -53,7 +53,7 @@
     <a href="#precios" data-i18n="nav.pricing">Planes</a>
     <a href="#faq" data-i18n="nav.faq">Preguntas</a>
     <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-    <a class="btn-primary btn-primary nav__mobile btn-primary" href="#precios">Empezar gratis</a>
+    <a class="btn-primary btn-primary nav__mobile btn-primary" href="#precios" data-i18n="hero.ctaPrimary">Ver planes</a>
   </div>
 </header>
 
@@ -62,11 +62,11 @@
   <div class="container">
     <div class="hero__inner">
       <div class="hero__text">
-        <div class="hero__badge">🏆 Sistema de fidelización SaaS para negocios</div>
+        <div class="hero__badge" data-i18n="hero.eyebrow">🏆 Sistema de fidelización SaaS para negocios</div>
         <h1 class="hero__h">
-          Tu negocio en el<br>
-          celular de tus<br>
-          <span>clientes</span>
+          <span data-i18n="hero.h1a">Tu negocio en el</span><br>
+          <span data-i18n="hero.h1b">celular de tus</span><br>
+          <span class="hero__accent" data-i18n="hero.h1c">clientes</span>
         </h1>
         <p class="hero__sub" data-i18n="hero.sub">Con tu ícono. Con tus colores. Con tu marca. Sin App Store, sin Play Store. Sellos, puntos y premios que hacen volver.</p>
         <div class="hero__ctas">
@@ -92,7 +92,7 @@
             <image href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#screen-clip)" preserveAspectRatio="xMidYMin slice"/>
             <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
           </svg>
-          <div class="phone__label">Tu ícono · Tu marca · Su celular</div>
+          <div class="phone__label" data-i18n="hero.phoneLabel">Tu ícono · Tu marca · Su celular</div>
         </div>
       </div>
     </div>
@@ -123,7 +123,7 @@
 <!-- DIFERENCIADOR -->
 <section class="diff" id="diferenciador">
   <div class="container">
-    <div class="eyebrow">El diferencial</div>
+    <div class="eyebrow" data-i18n="eyebrow.diff">El diferencial</div>
     <h2 class="section-h" data-i18n="differentiator.title">No es una app genérica.<br>Es <span style="color:var(--orange)">TU app.</span></h2>
     <p class="section-sub" data-i18n="differentiator.sub">La mayoría de los sistemas meten tu negocio en una app compartida donde convivís con la competencia. AmoMisClientes hace algo diferente.</p>
 
@@ -150,7 +150,7 @@
 <!-- CÓMO FUNCIONA -->
 <section class="how" id="como-funciona">
   <div class="container">
-    <div class="eyebrow">Simple y rápido</div>
+    <div class="eyebrow" data-i18n="eyebrow.how">Simple y rápido</div>
     <h2 class="section-h" style="color:#fff" data-i18n="how.title">Cómo funciona en 3 pasos</h2>
     <div class="how__grid">
       <div class="how__step">
@@ -187,7 +187,7 @@
 <!-- FUNCIONALIDADES -->
 <section class="features" id="funcionalidades">
   <div class="container">
-    <div class="eyebrow">Funcionalidades</div>
+    <div class="eyebrow" data-i18n="eyebrow.features">Funcionalidades</div>
     <h2 class="section-h" data-i18n="features.title">Todo lo que necesitás para fidelizar</h2>
     <p class="section-sub" data-i18n="features.sub">Herramientas pensadas para comercios reales, sin complicaciones técnicas.</p>
     <div class="feat-showcase">
@@ -278,7 +278,7 @@
 <!-- CASOS DE USO -->
 <section class="usecases" id="rubros">
   <div class="container">
-    <div class="eyebrow">Para tu negocio</div>
+    <div class="eyebrow" data-i18n="eyebrow.usecases">Para tu negocio</div>
     <h2 class="section-h" data-i18n="usecases.title">Funciona para tu tipo de negocio</h2>
     <div class="usecases__grid">
       <div class="usecase">
@@ -309,7 +309,7 @@
 <!-- PRECIOS -->
 <section class="pricing" id="precios">
   <div class="container">
-    <div class="eyebrow" style="display:block;text-align:center">Transparente</div>
+    <div class="eyebrow" style="display:block;text-align:center" data-i18n="eyebrow.pricing">Transparente</div>
     <h2 class="section-h section-h--center" data-i18n="pricing.title">Planes simples y transparentes</h2>
     <p class="section-sub section-sub--center" data-i18n="pricing.sub">Sin cargos ocultos. Sin permanencia. Cancelás cuando querés.</p>
     <div class="pricing__grid">
@@ -380,7 +380,7 @@
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
-    <div class="eyebrow" style="display:block;text-align:center">Dudas</div>
+    <div class="eyebrow" style="display:block;text-align:center" data-i18n="eyebrow.faq">Dudas</div>
     <h2 class="section-h section-h--center" data-i18n="faq.title">Preguntas frecuentes</h2>
     <div class="faq__list">
       <details class="faq__item"><summary data-i18n="faq.q1">¿Mis clientes tienen que descargar una app?</summary><p data-i18n="faq.a1">No. AmoMisClientes usa tecnología PWA: tus clientes instalan la app directamente desde el navegador en 2 clics, sin App Store ni Play Store.</p></details>
@@ -400,7 +400,7 @@
 <section class="contact" id="contacto">
   <div class="container">
     <div class="contact__inner">
-      <div class="eyebrow">¿Hablamos?</div>
+      <div class="eyebrow" data-i18n="eyebrow.contact">¿Hablamos?</div>
       <h2 class="section-h" data-i18n="contact.title">¿Querés ver cómo queda para tu negocio?</h2>
       <p class="contact__sub" data-i18n="contact.sub">Escribinos y coordinamos una demo personalizada para tu rubro.</p>
       <div class="contact__ctas">

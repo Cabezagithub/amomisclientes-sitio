@@ -155,7 +155,7 @@ button{font-family:inherit}
   font-size:clamp(36px,5vw,58px);color:var(--navy);
   line-height:1.1;margin-bottom:20px;
 }
-.hero__h span{color:var(--orange)}
+.hero__h .hero__accent{color:var(--orange)}
 .hero__sub{font-size:18px;color:var(--gray-600);line-height:1.7;margin-bottom:36px;max-width:480px}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .hero__note{font-size:13px;color:var(--gray-400)}

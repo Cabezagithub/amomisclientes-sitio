@@ -13,9 +13,14 @@
   "hero": {
     "headline": "Seu negócio no celular dos seus clientes",
     "sub": "Com seu ícone. Com suas cores. Com sua marca. Sem App Store, sem Play Store. Carimbos, pontos e prêmios que fazem voltar.",
-    "ctaPrimary": "Ver demo grátis",
+    "ctaPrimary": "Ver planos",
     "ctaSecondary": "Falar com vendas",
-    "badge": "Sem fidelidade · Cancele quando quiser"
+    "badge": "Sem fidelidade · Cancele quando quiser",
+    "eyebrow": "🏆 Sistema de fidelização SaaS para negócios",
+    "h1a": "Seu negócio no",
+    "h1b": "celular dos seus",
+    "h1c": "clientes",
+    "phoneLabel": "Seu ícone · Sua marca · O celular deles"
   },
   "social_proof": {
     "stat1_num": "40%",
@@ -205,5 +210,14 @@
     "subtitle": "Assistente AmoMisClientes · PBO-AssistantIA",
     "fallbackTitle": "Chat em breve",
     "fallbackBody": "Enquanto isso, escreva pelo WhatsApp."
+  },
+  "eyebrow": {
+    "diff": "O diferencial",
+    "how": "Simples e rápido",
+    "features": "Funcionalidades",
+    "usecases": "Para o seu negócio",
+    "pricing": "Transparente",
+    "faq": "Dúvidas",
+    "contact": "Vamos conversar?"
   }
 }
