@@ -18,13 +18,24 @@
     "badge": "No commitment · Cancel anytime"
   },
   "features": {
-    "title": "Built for real businesses",
-    "f1Title": "Modern presence",
-    "f1Text": "Fast, mobile-friendly experience.",
-    "f2Title": "Brand and trust",
-    "f2Text": "Clear communication with your audience.",
-    "f3Title": "Scalable",
-    "f3Text": "Grow without rebuilding from scratch."
+    "title": "Everything you need to build loyalty",
+    "f1Title": "Digital stamps",
+    "f1Text": "The classic punch card, now digital. You set the rules.",
+    "f2Title": "Points and rewards",
+    "f2Text": "Every purchase earns points redeemable for rewards you define.",
+    "f3Title": "Push notifications",
+    "f3Text": "Send promotions straight to their phone. No email, no mass WhatsApp.",
+    "sub": "Tools built for real shops, with no technical hassle.",
+    "f4Title": "QR from your phone",
+    "f4Text": "Generate the QR from your smartphone. No extra hardware, no tablet at the counter.",
+    "f5Title": "Branch map",
+    "f5Text": "Customers see the nearest branch and can contact it via WhatsApp.",
+    "f6Title": "Admin from your phone",
+    "f6Text": "Manage everything from your phone. Stats, QR, notifications.",
+    "f7Title": "Multilingual",
+    "f7Text": "Spanish, English and Portuguese. Ideal for tourist and international areas.",
+    "f8Title": "API for your system",
+    "f8Text": "Connect your POS or ERP. Points are added automatically."
   },
   "contact": {
     "eyebrow": "Let's talk",

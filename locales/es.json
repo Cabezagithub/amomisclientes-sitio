@@ -18,13 +18,24 @@
     "badge": "Sin permanencia · Cancelás cuando querés"
   },
   "features": {
-    "title": "Pensado para negocios reales",
-    "f1Title": "Presencia moderna",
-    "f1Text": "Experiencia rápida y usable en celular.",
-    "f2Title": "Marca y confianza",
-    "f2Text": "Comunicación clara con tu audiencia.",
-    "f3Title": "Escalable",
-    "f3Text": "Crece sin rehacer todo desde cero."
+    "title": "Todo lo que necesitás para fidelizar",
+    "f1Title": "Sellos digitales",
+    "f1Text": "El clásico cartón en versión digital. Configurás vos las reglas.",
+    "f2Title": "Puntos y premios",
+    "f2Text": "Por cada compra suman puntos canjeables por premios que vos definís.",
+    "f3Title": "Notificaciones push",
+    "f3Text": "Mandás promociones directo al celular. Sin email, sin WhatsApp masivo.",
+    "sub": "Herramientas pensadas para comercios reales, sin complicaciones técnicas.",
+    "f4Title": "QR desde tu celular",
+    "f4Text": "Generás el QR desde tu smartphone. Sin hardware extra, sin tablet en caja.",
+    "f5Title": "Mapa de sucursales",
+    "f5Text": "El cliente ve cuál sucursal le queda más cerca y puede contactar por WhatsApp.",
+    "f6Title": "Panel desde el celular",
+    "f6Text": "Administrás todo desde tu teléfono. Estadísticas, QR, notificaciones.",
+    "f7Title": "Multiidioma",
+    "f7Text": "Español, inglés y portugués. Ideal para zonas turísticas e internacionales.",
+    "f8Title": "API para tu sistema",
+    "f8Text": "Conectás con tu POS o ERP. Los puntos se suman automáticamente."
   },
   "contact": {
     "eyebrow": "¿Hablamos?",
