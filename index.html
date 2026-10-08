@@ -191,7 +191,27 @@
     <h2 class="section-h" data-i18n="features.title">Todo lo que necesitás para fidelizar</h2>
     <p class="section-sub" data-i18n="features.sub">Herramientas pensadas para comercios reales, sin complicaciones técnicas.</p>
     <div class="feat-showcase">
-      <!-- Lista de features: izquierda -->
+      <!-- Mockup de celular: izquierda -->
+      <div class="feat-phone">
+        <div class="feat-phone__mockup">
+          <svg class="feat-phone__frame" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="feat-screen-clip">
+                <rect x="12" y="12" width="366" height="820" rx="38" ry="38"/>
+              </clipPath>
+            </defs>
+            <rect x="2" y="2" width="386" height="840" rx="46" ry="46" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="3"/>
+            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="#000"/>
+            <circle cx="195" cy="30" r="6" fill="#111"/>
+            <rect x="385" y="180" width="5" height="60" rx="2" fill="#2a2a2a"/>
+            <rect x="0" y="160" width="5" height="40" rx="2" fill="#2a2a2a"/>
+            <rect x="0" y="210" width="5" height="40" rx="2" fill="#2a2a2a"/>
+            <image id="feat-phone-img" href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#feat-screen-clip)" preserveAspectRatio="xMidYMin slice"/>
+            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Lista de features: derecha -->
       <div class="feat-list">
         <button class="feat-item active" data-feat="0">
           <span class="feat-item__ico">🎫</span>
@@ -250,26 +270,7 @@
           </div>
         </button>
       </div>
-      <!-- Mockup de celular: derecha -->
-      <div class="feat-phone">
-        <div class="feat-phone__mockup">
-          <svg class="feat-phone__frame" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <clipPath id="feat-screen-clip">
-                <rect x="12" y="12" width="366" height="820" rx="38" ry="38"/>
-              </clipPath>
-            </defs>
-            <rect x="2" y="2" width="386" height="840" rx="46" ry="46" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="3"/>
-            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="#000"/>
-            <circle cx="195" cy="30" r="6" fill="#111"/>
-            <rect x="385" y="180" width="5" height="60" rx="2" fill="#2a2a2a"/>
-            <rect x="0" y="160" width="5" height="40" rx="2" fill="#2a2a2a"/>
-            <rect x="0" y="210" width="5" height="40" rx="2" fill="#2a2a2a"/>
-            <image id="feat-phone-img" href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#feat-screen-clip)" preserveAspectRatio="xMidYMin slice"/>
-            <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
-          </svg>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -480,16 +481,17 @@
 <script>amoI18n.init().then(function(){amoChat.init();}).catch(function(e){console.error(e);amoChat.init();});</script>
 <script>
 (function(){
-  // Imágenes por feature (misma imagen por ahora, reemplazá cuando tengas screenshots)
+  // Imágenes por feature — reemplazá cada una con el screenshot correspondiente
+  // Orden: Sellos, Puntos, Notificaciones, QR, Mapa, Panel, Multiidioma, API
   var featImgs=[
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg",
-    "/imagenes/bocatta_screenshot.jpg"
+    "/imagenes/bocatta_screenshot.jpg",   // 🎫 Sellos digitales
+    "/imagenes/bocatta_screenshot.jpg",   // ⭐ Puntos y premios
+    "/imagenes/feat_notificaciones.jpg",  // 🔔 Notificaciones push ← imagen enviada
+    "/imagenes/bocatta_screenshot.jpg",   // 📲 QR desde tu celular
+    "/imagenes/bocatta_screenshot.jpg",   // 📍 Mapa de sucursales
+    "/imagenes/bocatta_screenshot.jpg",   // 📊 Panel desde el celular
+    "/imagenes/bocatta_screenshot.jpg",   // 🌍 Multiidioma
+    "/imagenes/bocatta_screenshot.jpg"    // 🔌 API para tu sistema
   ];
   var items=document.querySelectorAll(".feat-item");
   var phoneImg=document.getElementById("feat-phone-img");
