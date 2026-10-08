@@ -570,7 +570,29 @@ button{font-family:inherit}
 /* ── LIGHTBOX ─────────────────────────────────────────── */
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s}
 #lightbox.active{opacity:1;pointer-events:all}
-#lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,.6);transform:scale(.94);transition:transform .25s}
+#lightbox img{max-width:55vw;max-height:88vh;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,.6);transform:scale(.94);transition:transform .25s}
 #lightbox.active img{transform:scale(1)}
 #lightbox-close{position:absolute;top:20px;right:24px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:28px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 #lightbox-close:hover{background:rgba(255,255,255,.25)}
+
+/* ── FEATURES SHOWCASE (selector + mockup) ──────────────── */
+.feat-showcase{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;margin-top:48px}
+.feat-list{display:flex;flex-direction:column;gap:4px}
+.feat-item{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;background:transparent;border:1px solid transparent;border-radius:14px;cursor:pointer;text-align:left;transition:all .2s;width:100%}
+.feat-item:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.feat-item.active{background:rgba(255,107,53,.08);border-color:rgba(255,107,53,.3)}
+.feat-item__ico{font-size:24px;flex-shrink:0;margin-top:2px;width:32px;text-align:center}
+.feat-item__info{flex:1}
+.feat-item__title{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;transition:color .2s}
+.feat-item.active .feat-item__title{color:var(--orange)}
+.feat-item__text{font-size:13px;color:rgba(255,255,255,.45);line-height:1.5;max-height:0;overflow:hidden;transition:max-height .3s,opacity .3s;opacity:0}
+.feat-item.active .feat-item__text{max-height:80px;opacity:1}
+.feat-phone{position:sticky;top:88px;display:flex;justify-content:center}
+.feat-phone__mockup{width:200px}
+.feat-phone__frame{width:100%;height:auto;filter:drop-shadow(0 24px 48px rgba(0,0,0,.5))}
+@media(max-width:768px){
+  .feat-showcase{grid-template-columns:1fr;gap:32px}
+  .feat-phone{position:static;order:-1}
+  .feat-phone__mockup{width:160px;margin:0 auto}
+  .feat-item__text{max-height:none!important;opacity:1!important}
+}
