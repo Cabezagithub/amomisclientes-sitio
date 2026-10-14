@@ -114,6 +114,7 @@
 @media (min-width: 48rem) {
   .amo-chat__panel {
     width: min(100vw - 2rem, 30.8rem);
+    height: min(38.4rem, calc(100dvh - 6.5rem));
   }
 }
 
