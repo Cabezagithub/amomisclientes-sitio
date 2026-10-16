@@ -3,15 +3,16 @@
  * Completá iframeUrl cuando tengáis la URL oficial del widget; podés pasar emp_id u otros query params.
  */
 window.AMO_PBO_CHAT_CONFIG = {
-  /** URL base del embed (sin query opcionales si preferís armarlos en iframeParams) */
-  iframeUrl: 'https://servidoria.syspboia.com/public/embed/chat/index.html?emp_id=98&lang=es',
+  /** Embed del chat de AmoMisClientes en ServidorIA */
+  iframeUrl: 'https://servidoria.syspboia.com/public/embed/chat/index.html',
 
   /** Se añaden como ?clave=valor a iframeUrl */
   iframeParams: {
     emp_id: '98',
+    empresa_nombre: 'AmoMisClientes',
   },
 
-  /** Si definís un nombre (ej. lang), se rellena con document.documentElement.lang al abrir */
+  /** Solo cambia las etiquetas del chat. La respuesta sigue el idioma del visitante. */
   localeParam: 'lang',
   syncLocaleFromPage: true,
 };

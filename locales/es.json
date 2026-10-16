@@ -103,7 +103,8 @@
     "open": "Abrir chat de ayuda",
     "close": "Cerrar chat",
     "title": "¿En qué podemos ayudarte?",
-    "subtitle": "Asistente AmoMisClientes · PBO-AssistantIA",
+    "assistant": "Asistente",
+    "subtitle": "Asistente AmoMisClientes",
     "fallbackTitle": "Chat próximamente",
     "fallbackBody": "Mientras tanto escribinos por WhatsApp."
   },

@@ -479,8 +479,21 @@
   </button>
   <div class="amo-chat__panel" id="amo-chat-panel" hidden role="dialog" aria-modal="true" aria-labelledby="amo-chat-title">
     <div class="amo-chat__header">
-      <div><h2 id="amo-chat-title" data-i18n="chat.title">¿En qué podemos ayudarte?</h2><p class="amo-chat__subtitle" data-i18n="chat.subtitle">Asistente AmoMisClientes</p></div>
-      <button type="button" class="amo-chat__close" id="amo-chat-close" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+      <div class="amo-chat__heading">
+        <h2 id="amo-chat-title" data-i18n="chat.title">¿En qué podemos ayudarte?</h2>
+        <p class="amo-chat__subtitle" id="amo-chat-subtitle">Asistente AmoMisClientes</p>
+      </div>
+      <div class="amo-chat__actions">
+        <div class="amo-chat__langs" id="amo-chat-langs" role="group" aria-label="Idioma del chat">
+          <button type="button" class="amo-chat__lang" data-chat-lang="es" title="Español" aria-pressed="false">
+            <img src="flags/espanol90x90.png" alt="Español" width="22" height="22" />
+          </button>
+          <button type="button" class="amo-chat__lang" data-chat-lang="pt" title="Português" aria-pressed="false">
+            <img src="flags/portugues-brasil90x90.png" alt="Português" width="22" height="22" />
+          </button>
+        </div>
+        <button type="button" class="amo-chat__close" id="amo-chat-close" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+      </div>
     </div>
     <div class="amo-chat__body">
       <iframe class="amo-chat__iframe" id="amo-chat-iframe" title="Chat" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals" hidden></iframe>

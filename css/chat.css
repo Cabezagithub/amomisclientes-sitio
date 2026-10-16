@@ -98,8 +98,8 @@
   z-index: 1050;
   right: max(1rem, env(safe-area-inset-right));
   bottom: calc(max(1rem, env(safe-area-inset-bottom)) + var(--amo-chat-fab-size) + 0.75rem);
-  width: min(100vw - 2rem, 22rem);
-  height: min(32rem, calc(100dvh - 6.5rem));
+  width: min(100vw - 2rem, 26rem);
+  height: min(36rem, calc(100dvh - 6.5rem));
   max-height: calc(100dvh - 6.5rem);
   display: flex;
   flex-direction: column;
@@ -144,6 +144,11 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.amo-chat__heading {
+  flex: 1;
+  min-width: 0;
+}
+
 .amo-chat__header h2 {
   margin: 0;
   font-size: 1.05rem;
@@ -158,6 +163,46 @@
   color: rgba(232, 236, 241, 0.65);
   font-weight: 500;
   letter-spacing: 0.02em;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.amo-chat__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.amo-chat__langs {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.amo-chat__lang {
+  width: 1.85rem;
+  height: 1.85rem;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amo-chat__lang img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.amo-chat__lang.is-active {
+  border-color: #fff;
 }
 
 .amo-chat__close {
