@@ -10,6 +10,7 @@ window.AMO_PBO_CHAT_CONFIG = {
   iframeParams: {
     emp_id: '98',
     empresa_nombre: 'AmoMisClientes',
+    empresa_web: 'https://amomisclientes.com',
   },
 
   /** Solo cambia las etiquetas del chat. La respuesta sigue el idioma del visitante. */

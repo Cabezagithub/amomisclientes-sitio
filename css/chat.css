@@ -209,17 +209,22 @@
   flex-shrink: 0;
   width: 2.25rem;
   height: 2.25rem;
+  margin: 0;
+  padding: 0;
   border: none;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.08);
   color: #e8ecf1;
-  font-size: 1.35rem;
-  line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 0;
   transition: background 0.15s ease;
+}
+
+.amo-chat__close svg {
+  display: block;
 }
 
 .amo-chat__close:hover {
