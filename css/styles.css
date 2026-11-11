@@ -301,6 +301,11 @@ button{font-family:inherit}
 .plan__amt{font-family:'Plus Jakarta Sans',sans-serif;font-size:50px;font-weight:800;color:var(--navy);line-height:1}
 .plan--featured .plan__amt{color:var(--brand)}
 .plan__per{font-size:15px;color:var(--gray-400)}
+.plan__price{margin-bottom:10px}
+.plan__ars{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:5px 12px 5px 8px;background:var(--brand-light);color:var(--brand-dark);border:1px solid rgba(var(--brand-rgb),.18);border-radius:var(--r-full);font-size:13.5px;font-weight:700;letter-spacing:.01em}
+.plan__ars::before{content:"";width:18px;height:12px;border-radius:3px;background:var(--stripe);box-shadow:0 0 0 1px rgba(0,0,0,.12) inset}
+.plan__ars:empty,.pricing__ars-note:empty{display:none}
+.pricing__ars-note{font-size:13px;color:var(--gray-400)}
 .plan__desc{font-size:14px;color:var(--gray-600);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--gray-200);line-height:1.55}
 .plan__list{display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
 .plan__list li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--gray-800)}

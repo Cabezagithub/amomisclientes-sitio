@@ -126,7 +126,11 @@
     "pro_nudge": "Apenas USD 3 a mais que o Padrão",
     "pro_cta": "Começar com Pro",
     "payment_text": "Cartão de crédito ou débito via Stripe. No Brasil também por outros meios.",
-    "cancel_text": "Cancele a qualquer momento. O serviço continua ativo até o final do período pago."
+    "cancel_text": "Cancele a qualquer momento. O serviço continua ativo até o final do período pago.",
+    "base_ars": "",
+    "std_ars": "",
+    "pro_ars": "",
+    "ars_note": ""
   },
   "faq": {
     "title": "Perguntas frequentes",
