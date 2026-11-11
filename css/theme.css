@@ -1,0 +1,14 @@
+/* Tema por país: Argentina / Río de la Plata (celeste y blanco, acento Sol de Mayo).
+   Es el ÚNICO archivo que cambia entre sitios. Para otro país: copiar y ajustar estas variables. */
+:root{
+  --brand:#1769AA;            /* botones, enlaces y títulos destacados */
+  --brand-dark:#0E4A7B;       /* hover */
+  --brand-light:#EBF5FD;      /* fondos suaves */
+  --brand-rgb:23,105,170;     /* mismo color que --brand, para sombras y transparencias */
+  --brand-on-dark:#74ACDF;    /* texto de marca sobre fondos oscuros (celeste) */
+  --accent:#F6B40E;           /* amarillo: números de paso, insignias, subrayado */
+  --accent-ink:#1b1b1b;       /* texto sobre el acento */
+  --navy:#0f172a;             /* secciones oscuras y títulos */
+  --footer-bg:#080c14;
+  --stripe:linear-gradient(90deg,#74ACDF 0 33.3%,#ffffff 33.3% 66.6%,#74ACDF 66.6% 100%);
+}
