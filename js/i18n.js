@@ -51,6 +51,14 @@
       const val = getByPath(dict, key);
       if (val !== undefined && val !== null) el.textContent = val;
     });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      const val = getByPath(dict, el.getAttribute('data-i18n-html'));
+      if (val !== undefined && val !== null) el.innerHTML = val;
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      const val = getByPath(dict, el.getAttribute('data-i18n-alt'));
+      if (val !== undefined && val !== null) el.setAttribute('alt', val);
+    });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
       const key = el.getAttribute('data-i18n-placeholder');
       const val = getByPath(dict, key);
@@ -61,6 +69,31 @@
     const desc = getByPath(dict, 'meta.description');
     let meta = document.querySelector('meta[name="description"]');
     if (desc && meta) meta.setAttribute('content', desc);
+  }
+
+  // Imágenes por idioma: /imagenes/x.jpg (español) -> /imagenes/<lang>/x.jpg si existe; si no, español.
+  const imgCache = {};
+  function resolveImg(base, locale) {
+    return new Promise(function (resolve) {
+      if (locale === DEFAULT_LOCALE || base.indexOf('/imagenes/') !== 0) return resolve(base);
+      const alt = '/imagenes/' + locale + '/' + base.slice('/imagenes/'.length);
+      if (imgCache[alt] !== undefined) return resolve(imgCache[alt] ? alt : base);
+      const im = new Image();
+      im.onload = function () { imgCache[alt] = true; resolve(alt); };
+      im.onerror = function () { imgCache[alt] = false; resolve(base); };
+      im.src = alt;
+    });
+  }
+
+  function applyImages() {
+    document.querySelectorAll('[data-i18n-img]').forEach(function (el) {
+      const attr = el.tagName.toLowerCase() === 'image' ? 'href' : 'src';
+      if (!el.getAttribute('data-img-base')) el.setAttribute('data-img-base', el.getAttribute(attr));
+      const base = el.getAttribute('data-img-base');
+      resolveImg(base, currentLocale).then(function (url) {
+        if (el.getAttribute('data-img-base') === base) el.setAttribute(attr, url);
+      });
+    });
   }
 
   function renderLanguageSelector(locale) {
@@ -117,6 +150,7 @@
       const merged = await loadMergedDict(locale);
       window.amoI18nLastDict = merged;
       applyStrings(merged);
+      applyImages();
       bindLanguageSelector();
       bindLanguageSelectorFallback();
       renderLanguageSelector(locale);
@@ -130,9 +164,11 @@
       const merged = await loadMergedDict(locale);
       window.amoI18nLastDict = merged;
       applyStrings(merged);
+      applyImages();
       renderLanguageSelector(locale);
       return { locale, dict: merged };
     },
+    applyImages: applyImages,
     getLocale: function () {
       return currentLocale;
     },

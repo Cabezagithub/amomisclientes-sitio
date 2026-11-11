@@ -83,7 +83,8 @@
     "f_error": "Hubo un problema al enviar. Por favor intentá de nuevo.",
     "success": "¡Mensaje recibido! Te respondemos a la brevedad.",
     "whatsapp_alt": "¿Preferís WhatsApp?",
-    "whatsapp_label": "Escribir por WhatsApp"
+    "whatsapp_label": "Escribir por WhatsApp",
+    "email_label": "Enviar email"
   },
   "footer": {
     "tagline": "Tu app de fidelización con tu marca.",
@@ -176,5 +177,46 @@
     "pricing": "Transparente",
     "faq": "Dudas",
     "contact": "¿Hablamos?"
+  },
+  "social_proof": {
+    "stat1_num": "40%",
+    "stat1_label": "más visitas con programa de fidelización activo",
+    "stat2_num": "5x",
+    "stat2_label": "más barato retener que conseguir un cliente nuevo",
+    "stat3_num": "84%",
+    "stat3_label": "de los consumidores elige marcas que los premian"
+  },
+  "differentiator": {
+    "title": "No es una app genérica.<br>Es <span style=\"color:var(--brand)\">TU app.</span>",
+    "sub": "La mayoría de los sistemas meten tu negocio en una app compartida donde convivís con la competencia. AmoMisClientes hace algo diferente.",
+    "point1_title": "Tu ícono en su pantalla de inicio",
+    "point1_text": "Tus clientes instalan tu app desde el navegador, sin pasar por tiendas. Tu logo, no el de otra empresa.",
+    "point2_title": "Tus colores y marca en cada pantalla",
+    "point2_text": "Configurás logo, colores e imagen de fondo. Tus clientes viven tu marca, no una app blanca genérica.",
+    "point3_title": "Sin App Store. Sin Play Store.",
+    "point3_text": "Tecnología PWA: instalación en 2 clics desde el navegador. Cero fricción, cero abandono."
+  },
+  "how": {
+    "title": "Cómo funciona en 3 pasos",
+    "step1_title": "Configurás tu negocio",
+    "step1_text": "Cargás tu logo, colores y reglas de sellos o puntos. En menos de una hora tu app está lista.",
+    "step2_title": "Tu cliente escanea el QR",
+    "step2_text": "Mostrás el QR en caja desde tu celular. El cliente lo escanea e instala tu app en el momento.",
+    "step3_title": "Acumula, canjea y vuelve",
+    "step3_text": "El sistema trabaja solo. Tus clientes acumulan, reciben notificaciones y vuelven por sus premios.",
+    "step1_alt": "Panel de configuración AmoMisClientes",
+    "step2_alt": "QR para registrar sello",
+    "step3_alt": "Cliente con cartón de sellos en su celular"
+  },
+  "usecases": {
+    "title": "Funciona para tu tipo de negocio",
+    "cafe_title": "Cafeterías",
+    "cafe_text": "Cartón digital de sellos. El 8vo café es gratis. Tus clientes vuelven a completarlo.",
+    "retail_title": "Ferreterías y retail",
+    "retail_text": "Puntos por compra canjeables por descuentos o productos.",
+    "bar_title": "Bares y gastronomía",
+    "bar_text": "Sellos y puntos combinados. Doble herramienta para fidelizar.",
+    "other_title": "Y muchos más",
+    "other_text": "Peluquerías · Gimnasios · Veterinarias · Lavaderos · Estaciones de servicio · Supermercados"
   }
 }

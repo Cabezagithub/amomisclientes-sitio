@@ -119,7 +119,7 @@
             <rect x="385" y="180" width="5" height="60" rx="2" fill="#2a2a2a"/>
             <rect x="0" y="160" width="5" height="40" rx="2" fill="#2a2a2a"/>
             <rect x="0" y="210" width="5" height="40" rx="2" fill="#2a2a2a"/>
-            <image href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#screen-clip)" preserveAspectRatio="xMidYMin slice"/>
+            <image data-i18n-img href="/imagenes/bocatta_screenshot.jpg" x="12" y="12" width="366" height="820" clip-path="url(#screen-clip)" preserveAspectRatio="xMidYMin slice"/>
             <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
           </svg>
           <div class="phone__label" data-i18n="hero.phoneLabel">Tu ícono · Tu marca · Su celular</div>
@@ -154,7 +154,7 @@
 <section class="diff" id="diferenciador">
   <div class="container">
     <div class="eyebrow" data-i18n="eyebrow.diff">El diferencial</div>
-    <h2 class="section-h" data-i18n="differentiator.title">No es una app genérica.<br>Es <span style="color:var(--brand)">TU app.</span></h2>
+    <h2 class="section-h" data-i18n-html="differentiator.title">No es una app genérica.<br>Es <span style="color:var(--brand)">TU app.</span></h2>
     <p class="section-sub" data-i18n="differentiator.sub">La mayoría de los sistemas meten tu negocio en una app compartida donde convivís con la competencia. AmoMisClientes hace algo diferente.</p>
 
     <div class="diff__points">
@@ -184,7 +184,7 @@
     <h2 class="section-h" style="color:#fff" data-i18n="how.title">Cómo funciona en 3 pasos</h2>
     <div class="how__grid">
       <div class="how__step">
-        <img class="how__step-img" src="/imagenes/carton_configuracion.jpg" data-lightbox alt="Panel de configuración AmoMisClientes"/>
+        <img class="how__step-img" src="/imagenes/carton_configuracion.jpg" data-i18n-img data-lightbox data-i18n-alt="how.step1_alt" alt="Panel de configuración AmoMisClientes"/>
         <div class="how__step-body">
           <div class="how__step-num">1</div>
           <h3 data-i18n="how.step1_title">Configurás tu negocio</h3>
@@ -192,7 +192,7 @@
         </div>
       </div>
       <div class="how__step">
-        <img class="how__step-img" src="/imagenes/sello_escanear.jpg" data-lightbox alt="QR para registrar sello"/>
+        <img class="how__step-img" src="/imagenes/sello_escanear.jpg" data-i18n-img data-lightbox data-i18n-alt="how.step2_alt" alt="QR para registrar sello"/>
         <div class="how__step-body">
           <div class="how__step-num">2</div>
           <h3 data-i18n="how.step2_title">Tu cliente escanea el QR</h3>
@@ -200,7 +200,7 @@
         </div>
       </div>
       <div class="how__step">
-        <img class="how__step-img" src="/imagenes/carton_en_movil.jpg" data-lightbox alt="Cliente con cartón de sellos en su celular"/>
+        <img class="how__step-img" src="/imagenes/carton_en_movil.jpg" data-i18n-img data-lightbox data-i18n-alt="how.step3_alt" alt="Cliente con cartón de sellos en su celular"/>
         <div class="how__step-body">
           <div class="how__step-num">3</div>
           <h3 data-i18n="how.step3_title">Acumula, canjea y vuelve</h3>
@@ -233,7 +233,7 @@
             <rect x="385" y="180" width="5" height="60" rx="2" fill="#2a2a2a"/>
             <rect x="0" y="160" width="5" height="40" rx="2" fill="#2a2a2a"/>
             <rect x="0" y="210" width="5" height="40" rx="2" fill="#2a2a2a"/>
-            <image id="feat-phone-img" href="/imagenes/puntos.jpg" x="12" y="12" width="366" height="820" clip-path="url(#feat-screen-clip)" preserveAspectRatio="xMidYMin slice"/>
+            <image id="feat-phone-img" data-i18n-img href="/imagenes/puntos.jpg" x="12" y="12" width="366" height="820" clip-path="url(#feat-screen-clip)" preserveAspectRatio="xMidYMin slice"/>
             <rect x="12" y="12" width="366" height="820" rx="38" ry="38" fill="none" stroke="#222" stroke-width="1"/>
           </svg>
         </div>
@@ -540,7 +540,8 @@
       items.forEach(function(b){b.classList.remove("active");});
       btn.classList.add("active");
       if(phoneImg && featImgs[i]){
-        phoneImg.setAttribute("href",featImgs[i]);
+        phoneImg.setAttribute("data-img-base",featImgs[i]);
+        if(window.amoI18n&&window.amoI18n.applyImages){window.amoI18n.applyImages();}else{phoneImg.setAttribute("href",featImgs[i]);}
       }
     });
   });

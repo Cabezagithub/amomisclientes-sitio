@@ -83,7 +83,8 @@
     "f_error": "Something went wrong. Please try again.",
     "success": "Message received! We'll get back to you shortly.",
     "whatsapp_alt": "Prefer WhatsApp?",
-    "whatsapp_label": "Chat on WhatsApp"
+    "whatsapp_label": "Chat on WhatsApp",
+    "email_label": "Send email"
   },
   "footer": {
     "tagline": "Your loyalty app with your brand.",
@@ -176,5 +177,46 @@
     "pricing": "Transparent",
     "faq": "Questions",
     "contact": "Shall we talk?"
+  },
+  "social_proof": {
+    "stat1_num": "40%",
+    "stat1_label": "more visits with an active loyalty program",
+    "stat2_num": "5x",
+    "stat2_label": "cheaper to retain a customer than to win a new one",
+    "stat3_num": "84%",
+    "stat3_label": "of consumers choose brands that reward them"
+  },
+  "differentiator": {
+    "title": "It's not a generic app.<br>It's <span style=\"color:var(--brand)\">YOUR app.</span>",
+    "sub": "Most systems put your business inside a shared app where you sit next to the competition. AmoMisClientes does something different.",
+    "point1_title": "Your icon on their home screen",
+    "point1_text": "Your customers install your app from the browser, no app stores. Your logo, not another company's.",
+    "point2_title": "Your colors and brand on every screen",
+    "point2_text": "Set your logo, colors and background image. Your customers live your brand, not a generic white-label app.",
+    "point3_title": "No App Store. No Play Store.",
+    "point3_text": "PWA technology: 2-click install from the browser. Zero friction, zero drop-off."
+  },
+  "how": {
+    "title": "How it works in 3 steps",
+    "step1_title": "Set up your business",
+    "step1_text": "Upload your logo, colors and stamp or points rules. Your app is ready in under an hour.",
+    "step2_title": "Your customer scans the QR",
+    "step2_text": "Show the QR at the register from your phone. The customer scans it and installs your app on the spot.",
+    "step3_title": "Earn, redeem and come back",
+    "step3_text": "The system works on its own. Your customers collect, get notifications and come back for their rewards.",
+    "step1_alt": "AmoMisClientes settings panel",
+    "step2_alt": "QR code to register a stamp",
+    "step3_alt": "Customer with a stamp card on their phone"
+  },
+  "usecases": {
+    "title": "Works for your type of business",
+    "cafe_title": "Coffee shops",
+    "cafe_text": "Digital stamp card. The 8th coffee is free. Your customers come back to complete it.",
+    "retail_title": "Hardware stores and retail",
+    "retail_text": "Points per purchase, redeemable for discounts or products.",
+    "bar_title": "Bars and restaurants",
+    "bar_text": "Stamps and points combined. Two tools to build loyalty.",
+    "other_title": "And many more",
+    "other_text": "Hair salons · Gyms · Vet clinics · Car washes · Gas stations · Supermarkets"
   }
 }

@@ -31,7 +31,7 @@
     "stat3_label": "dos consumidores escolhe marcas que os recompensam"
   },
   "differentiator": {
-    "title": "Não é um app genérico.\nÉ O SEU app.",
+    "title": "Não é um app genérico.<br>É <span style=\"color:var(--brand)\">O SEU app.</span>",
     "sub": "A maioria dos sistemas coloca seu negócio em um app compartilhado onde você convive com a concorrência. AmoMisClientes faz algo diferente.",
     "vs_them": "Seu negócio divide tela com a concorrência",
     "vs_us": "App exclusivo com sua marca no celular deles",
@@ -49,7 +49,10 @@
     "step2_title": "Seu cliente escaneia o QR",
     "step2_text": "Você mostra o QR no caixa pelo seu celular. O cliente escaneia e instala seu app na hora.",
     "step3_title": "Acumula, resgata e volta",
-    "step3_text": "O sistema trabalha sozinho. Seus clientes acumulam, recebem notificações e voltam pelos prêmios."
+    "step3_text": "O sistema trabalha sozinho. Seus clientes acumulam, recebem notificações e voltam pelos prêmios.",
+    "step1_alt": "Painel de configuração AmoMisClientes",
+    "step2_alt": "QR para registrar carimbo",
+    "step3_alt": "Cliente com cartão de carimbos no celular"
   },
   "features": {
     "title": "Tudo o que você precisa para fidelizar",
