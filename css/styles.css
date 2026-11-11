@@ -303,7 +303,7 @@ button{font-family:inherit}
 .plan__per{font-size:15px;color:var(--gray-400)}
 .plan__price{margin-bottom:10px}
 .plan__ars{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:5px 12px 5px 8px;background:var(--brand-light);color:var(--brand-dark);border:1px solid rgba(var(--brand-rgb),.18);border-radius:var(--r-full);font-size:13.5px;font-weight:700;letter-spacing:.01em}
-.plan__ars::before{content:"";width:18px;height:12px;border-radius:3px;background:var(--stripe);box-shadow:0 0 0 1px rgba(0,0,0,.12) inset}
+.plan__ars::before{content:"";width:20px;height:14px;border-radius:3px;background:linear-gradient(180deg,#74ACDF 0 33.33%,#fff 33.33% 66.66%,#74ACDF 66.66% 100%);box-shadow:0 0 0 1px rgba(0,0,0,.12) inset}
 .plan__ars:empty,.pricing__ars-note:empty{display:none}
 .pricing__ars-note{font-size:13px;color:var(--gray-400)}
 .plan__desc{font-size:14px;color:var(--gray-600);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--gray-200);line-height:1.55}

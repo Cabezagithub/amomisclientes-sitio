@@ -147,9 +147,9 @@
     "pro_cta": "Empezar con Pro",
     "payment_text": "Tarjeta de crédito o débito vía Stripe. En Argentina también por Mercado Pago.",
     "cancel_text": "Cancelás en cualquier momento. El servicio sigue activo hasta el fin del período pago.",
-    "base_ars": "≈ $23.000 ARS /mes",
-    "std_ars": "≈ $31.000 ARS /mes",
-    "pro_ars": "≈ $35.000 ARS /mes",
+    "base_ars": "$28.000 ARS /mes",
+    "std_ars": "$37.500 ARS /mes",
+    "pro_ars": "$42.500 ARS /mes",
     "ars_note": "Valores en pesos argentinos (ARS) de referencia, sujetos a actualización."
   },
   "faq": {
